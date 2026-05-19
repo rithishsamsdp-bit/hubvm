@@ -1,0 +1,9 @@
+.Businessholiday_container{
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding: 0px 20px 0px 20px;
+}
+.add_Businessholiday_btn_icon {
+    font-size: var(--btn_font_size);
+}

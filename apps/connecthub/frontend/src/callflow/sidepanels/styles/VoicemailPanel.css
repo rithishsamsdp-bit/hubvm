@@ -1,0 +1,67 @@
+.voicemail-sidebar {
+    width: 100%;
+    background: #fff;
+    border-left: 1px solid #e0e0e0;
+    overflow-y: auto;
+    height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+
+.voicemail-panel-settings {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EBEBEB;
+    padding: 0px 16px 16px 16px;
+}
+
+.voicemail-sidepanel-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.voicemail-sidepanel-section-header p {
+  font-family: var(--segoe);
+  font-weight: 600;
+  font-size: var(--font-md);
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--color-midnight-blue);
+}
+
+.voicemail-sidepanel-input-label {
+  font-family: var(--segoe);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  color: var(--color-midnight-blue);
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+.voicemail-panel-message-settings {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 0px 16px 16px 16px;
+}
+.voicemail-sidepanel-message-last{
+    margin-top: 10px;
+    font-family: var(--segoe);
+    font-weight: 400;
+    font-size: var(--font-xs);
+    line-height: 160%;
+    letter-spacing: 0.15px;
+    color: var(--color-midnight-blue);
+}
+
+.ivr-switch-container {
+  margin-top: 16px;
+}
+
+.ivr-switch-container .switch-label {
+  font-size: var(--font-xs) !important;
+  font-weight: 400;
+}

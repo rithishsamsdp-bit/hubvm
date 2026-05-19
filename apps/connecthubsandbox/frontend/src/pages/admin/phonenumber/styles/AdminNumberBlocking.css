@@ -1,0 +1,111 @@
+.admin_blocking_creation_container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 131px;
+}
+
+.admin_blocking_container_table_search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  gap: 30px;
+}
+
+.admin_blocking_action_container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin_blocking_modal_header_container {
+  background-color: var(--bg-white);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin_blocking_modal_header {
+  font-family: var(--segoe);
+  font-weight: 700;
+  font-size: var(--font-xxxl);
+  color: #0F172A;
+  margin: 0;
+}
+
+.admin_blocking_modal_form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin_blocking_modal_form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.admin_blocking_modal_form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.admin_blocking_modal_form_group .form_label {
+  font-family: var(--segoe);
+  font-weight: 600;
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.admin_blocking_modal_form_group.full-width {
+  grid-column: 1 / -1;
+}
+
+.admin_blocking_modal_footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  margin-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.combined-phone-input {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.phoneno_country_code_section {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.phone-number-section {
+  flex: 1;
+}
+
+.phone-number-input {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 0 12px;
+  font-size: 14px;
+  color: #334155;
+  outline: none;
+  transition: all 0.2s;
+  font-family: var(--segoe);
+}
+
+.phone-number-input:focus {
+  border-color: #3B82F6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
+}

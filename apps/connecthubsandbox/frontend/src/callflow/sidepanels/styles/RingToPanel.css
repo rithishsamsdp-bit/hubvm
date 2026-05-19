@@ -1,0 +1,65 @@
+.ringto-sidebar {
+  width: 100%;
+  background: #fff;
+  border-left: 1px solid #e0e0e0;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+.ringto-sidepanel-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ringto-sidepanel-section-header p {
+  font-family: var(--segoe);
+  font-weight: 600;
+  font-size: var(--font-md);
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--color-midnight-blue);
+}
+
+.ringto-panel-settings {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 0px 16px 16px 16px;
+}
+
+.ringto-sidepanel-input-label {
+  font-family: var(--segoe);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  color: var(--color-midnight-blue);
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+.ringto-key-val-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.ringto-get-keyvalue-container {
+  width: 100%;
+}
+
+.ringto-json-textarea {
+  width: 100%;
+  border: 1px solid #a3a3a3;
+  border-radius: var(--radius-md);
+  padding: 10px;
+  font-family: monospace;
+  resize: vertical;
+}
+
+.ringto-add-more-btn {
+  width: 100%;
+}

@@ -1,0 +1,119 @@
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    :root {
+
+      /* font size */
+      --very_very_very_small_font_size: 10px;
+      --very_very_small_font_size: 12px;
+      --very_small_font_size: 14px;
+      --small_font_size: 16px;
+      --normal_font_size: 20px;
+      --medium_font_size: 24px;
+      --big_font_size: 36px;
+      --very_big_font_size: 62px;
+
+      /*color */
+      --black_color: #000000;
+      --light_black: #2C2C2C;
+      --grey_color: #eaeaeb;
+      --light_grey_color: #fafafa;
+      --call_green_color:#389e0d;
+      --call_red_color:#fe1a27;
+      --call_busy_color:#FFCC00;
+
+
+      --primary_color: #009586; 
+      --primary_color_opacity: rgb(52 56 62 / .5);
+      --secondary_color: #323649;
+      --white_color: #ffffff;
+      --red_color: #fe1a27;
+
+
+
+
+      /* font color */
+      --white_font_color: #ffffff;
+      --black_font_color: #000000;
+      --grey_font_color: #A0A0A0;
+      --light_black_font_color: #2C2C2C;
+
+      /* Sidebar color */
+      --side_bar_background_color: rgb(0, 170, 255);
+      --side_bar_background: linear-gradient(125deg, rgba(0, 170, 255, 1) 0%, rgba(102, 0, 255, 1) 100%);
+
+      --dialer_background: linear-gradient(90deg, rgba(127, 138, 248, 1) 0%, rgba(98, 156, 249, 1) 100%);
+
+
+
+
+
+      /* Scrollbar */
+      --scrollbar_color: #009586;
+
+
+
+      /* button icon font size */
+
+      --btn_font_size: 20px;
+
+      /* Navbar color */
+      --navbar_background_color: #ffffff;
+      --navbar_border_color: #eaeaeb;
+      --navbar_heading_font_size: 36px;
+      --navbar_user_icon_color: #eaeaeb;
+      --navbar_user_font_size: 12px;
+      --navbar_user_font_color: #000000;
+      --navbar_dropdown_font_color: 16px;
+
+      /* Sidebar */
+      --side_bar_background_color: #323649;
+      --side_bar_font_color: #ffffff;
+      --side_bar_font_size: 11px;
+      --side_bar_icon_color: #ffffff;
+      --side_bar_active_icon_color: #009586;
+      --side_bar_icon_size: 20px;
+
+      /* Dialpad */
+      --dialpad_background_color: #ffffff;
+      --dialpad_border_color: #eaeaeb;
+      --dialpad_calling_background_color: #323649;
+      --dialpad_calling_icon_color: #ffffff;
+      --dialpad_calling_icon_border_color: #009586;
+
+
+    }
+
+
+
+
+
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px grey;
+      border-radius: 10px;
+    }
+
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: var(--scrollbar_color);
+      border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar_color);
+
+    }
+
+
+    .App_loading_container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }

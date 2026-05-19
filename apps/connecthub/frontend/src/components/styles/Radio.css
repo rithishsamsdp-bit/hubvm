@@ -1,0 +1,79 @@
+.radio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.radio-label-text {
+  font-weight: 600;
+  color: #0b1120;
+  margin-bottom: 8px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-direction: row;
+}
+
+.radio-group.vertical {
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  color: #0b1120;
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.radio-custom {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ff5200;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  position: relative;
+  background-color: #fff;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.radio-input:checked + .radio-custom {
+  border-color: #ff5200;
+  background-color: #fff;
+}
+
+.radio-custom::after {
+  content: '';
+  width: 12px; /* Slightly larger for visibility */
+  height: 12px;
+  border-radius: 50%;
+  background-color: transparent; /* Invisible by default */
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.radio-input:checked + .radio-custom::after {
+  background-color: #ff5200 !important; /* Orange fill when checked */
+}
+
+.radio-text {
+  font-size: 14px;
+}

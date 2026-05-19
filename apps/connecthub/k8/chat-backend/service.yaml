@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-chat
+  namespace: connecthub
+spec:
+  selector:
+    app: fastapi-chat
+  ports:
+  - protocol: TCP
+    port: 5060
+    targetPort: 5060
+  type: ClusterIP

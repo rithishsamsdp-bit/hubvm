@@ -1,0 +1,461 @@
+.conversation_message_input_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Message Input Container */
+.conversation_message_input_container {
+  padding: 16px 32px;
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+  background-color: var(--bg-white);
+  border-top: 1px solid #e5e7eb;
+}
+
+.conversation_message_input {
+  width: 100%;
+  padding: 10px;
+  padding-right: 120px; /* Make space for icons */
+  border: 0.5px solid #aaaaaa;
+  outline: none;
+  border-radius: var(--radius-mdl);
+  color: var(--color-iron-gray);
+  font-family: var(--segoe);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  line-height: 1.5;
+  letter-spacing: 0px;
+  resize: none;
+  max-height: 150px;
+  overflow-y: auto;
+  display: block;
+}
+
+.conversation_message_icons {
+  cursor: pointer;
+  position: absolute;
+  right: 42px;
+  bottom: 24px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.conversation_message_icons_vertical_line {
+  width: 1px;
+  height: 20px;
+  background-color: var(--color-fog-gray);
+}
+
+/* Fixed-size preview container */
+.wa-file-preview {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-bottom: 4px;
+  padding: 0 32px;
+}
+
+/* Image/video preview box */
+.wa-media-preview {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f4f5f7;
+}
+
+.wa-preview-img,
+.wa-preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Document or other file preview card */
+.wa-file-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background: #eaf1fb; */
+  border-radius: 8px;
+  padding: 10px 12px;
+  width: 220px;
+  position: relative;
+}
+
+.wa-file-icon {
+  font-size: 22px;
+}
+
+.wa-file-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 8px;
+  overflow: hidden;
+}
+
+.wa-file-name {
+  font-weight: 500;
+  font-size: 13px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wa-file-size {
+  font-size: 11px;
+  color: #666;
+}
+
+/* Remove (✖) button */
+.wa-remove-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wa-remove-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Template Dropdown */
+.wa-template-dropdown-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.wa-template-dropdown {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 8px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.wa-template-dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0F172A;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #2a3942;
+}
+
+.wa-template-dropdown-item:last-child {
+  border-bottom: none;
+}
+
+
+.wa-template-list {
+  padding: 8px 12px;
+  min-width: 200px;
+}
+
+.wa-template-loading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  color: #666;
+  font-size: 13px;
+}
+
+.wa-template-empty {
+  color: #999;
+  font-style: italic;
+  cursor: default;
+}
+
+.wa-template-empty:hover {
+  background-color: white;
+}
+
+/* Emoji Picker */
+.wa-emoji-container {
+  position: relative;
+  display: inline-flex;
+}
+
+.wa-emoji-btn {
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.wa-emoji-btn:hover {
+  transform: scale(1.15);
+}
+
+.wa-emoji-picker-popup {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 10px;
+  z-index: 1000;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* Enhanced Template Preview Card */
+.wa-template-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  background: #FFEDE4;
+  border-radius: 12px;
+  padding: 12px;
+  min-width: 320px;
+  max-width: 400px;
+  position: relative;
+  animation: slideIn 0.3s ease-out;
+  border-left: 2px solid #ff5200;
+}
+
+.wa-template-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.wa-template-preview-icon {
+  width: 40px;
+  height: 40px;
+  background: #ff5200;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.wa-template-preview-icon svg {
+  fill: white !important;
+}
+
+.wa-template-preview-icon svg path {
+  fill: white !important;
+  stroke: white !important;
+}
+
+.wa-template-preview-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.wa-template-preview-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ff5200;
+}
+
+.wa-template-preview-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: #111b21;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.wa-template-full-text {
+  font-size: 14px;
+  color: #3b4a54;
+  line-height: 1.6;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  border: 2px solid #e9edef;
+}
+
+/* Inline Variable Input */
+.wa-variable-container {
+  display: inline-block;
+  margin: 0 2px;
+  vertical-align: middle;
+}
+
+.wa-inline-variable-input {
+  border: 1px solid #ff5200;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 13px;
+  color: #111b21;
+  background: #ffffff;
+  outline: none;
+  min-width: 60px;
+  max-width: 150px;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.wa-inline-variable-input:focus {
+  border-color: #ff5200;
+  transform: translateY(-1px);
+}
+
+.wa-inline-variable-input::placeholder {
+  color: #aebac1;
+  font-weight: 400;
+}
+
+.wa-template-preview-hint {
+  font-size: 12px;
+  color: #8696a0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-style: italic;
+}
+
+.wa-template-preview-hint::before {
+  content: '✓';
+  color: #ff5200;
+  font-weight: bold;
+}
+
+.wa-template-remove-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff3b30;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.wa-template-remove-btn:hover {
+  background: #d32f2f;
+  transform: scale(1.15) rotate(90deg);
+}
+
+/* Custom Send Options styles */
+.custom-send-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.custom-send-options {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  margin-bottom: 15px; /* Spacing from the button */
+  background: #34404d;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 160px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  z-index: 2147483647;
+  animation: popIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.custom-send-options::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 15px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #34404d transparent transparent transparent;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.9) translateY(10px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.send-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  color: #ffffff;
+}
+
+.send-option:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.send-option.whatsapp:hover {
+  color: #25D366;
+  background-color: rgba(37, 211, 102, 0.1);
+}
+
+.send-option.sms:hover {
+  color: #3B82F6;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.send-option.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+

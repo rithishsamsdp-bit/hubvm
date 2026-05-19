@@ -1,0 +1,186 @@
+.dashboard {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.dashboard_wrapper {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 31px 30px 0px 30px;
+}
+
+.dashboard_inventory_status {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.dashboard_inventory_status_header1 {
+  max-width: 840px;
+  min-height: 149px;
+  background-color: var(--white-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+  padding: 20px 24px;
+}
+
+.dashboard_inventory_title {
+  font-family: var(--sengo);
+  font-weight: 600;
+  font-size: var(--font-xs);
+  line-height: 166%;
+  letter-spacing: 0.4px;
+  color: var(--dark-blue-font-color);
+  margin-bottom: 16px;
+}
+
+.dashboard_inventory_boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.dashboard_inventory_box {
+  width: 180px;
+  height: 74px;
+  background-color: var(--white-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 16px 17px;
+  display: flex;
+  gap: 11px;
+}
+
+.dashboard_inventory_icon_box {
+  width: 42px;
+  height: 42px;
+  background-color: var(--grey1-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard_inventory_icon {
+  width: 18px;
+  height: 18px;
+}
+
+.dashboard_inventory_value_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard_inventory_value_heading {
+  font-family: var(--sengo);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--dark-blue-font-color);
+  margin-bottom: 1px;
+}
+
+.dashboard_inventory_values {
+  font-family: var(--sengo);
+  font-weight: 700;
+  font-size: var(--font-xxl);
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--dark-blue-font-color);
+}
+
+.dashboard_inventory_status_header2 {
+  max-width: 700px;
+  min-height: 149px;
+  background-color: var(--white-bg);
+  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+  padding: 20px 24px;
+}
+
+.dashboard_inventory_call_boxes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.dashboard_inventory_incoming_call_box {
+  width: 203px;
+  height: 74px;
+  background-color: var(--white-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  border-left: 4px solid #2dd4bf;
+  display: flex;
+  align-items: center;
+  padding-left: 26px;
+}
+
+.dashboard_inventory_outgoing_call_box {
+  width: 203px;
+  height: 74px;
+  background-color: var(--white-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  border-left: 4px solid #16a34a;
+  display: flex;
+  align-items: center;
+  padding-left: 26px;
+}
+
+.dashboard_inventory_abandoned_call_box {
+  width: 203px;
+  height: 74px;
+  background-color: var(--white-bg);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  border-left: 4px solid #e11d48;
+  display: flex;
+  align-items: center;
+  padding-left: 26px;
+}
+
+.dashboard_inventory_call_value_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dashboard_inventory_call_value_heading {
+  font-family: var(--sengo);
+  font-weight: 600;
+  font-size: var(--font-xs);
+  line-height: 166%;
+  letter-spacing: 0.4px;
+  color: var(--grey-font-color);
+  margin-bottom: 2px;
+}
+
+.dashboard_inventory_call_values {
+  font-family: var(--sengo);
+  font-weight: 600;
+  font-size: var(--font-xl);
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: var(--dark1-blue-font-color);
+}
+
+.dashboard_agent_list_heading {
+  font-family: var(--sengo);
+  font-weight: 700;
+  font-size: var(--font-xxxl);
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: var(--dark-blue-font-color);
+  margin-bottom: 16px;
+}

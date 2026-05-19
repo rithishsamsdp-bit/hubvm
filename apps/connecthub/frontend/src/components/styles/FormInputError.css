@@ -1,0 +1,18 @@
+.FormInputError {
+  display: flex;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.FormInputError_icon {
+  width: 24px;
+  height: 24px;
+}
+
+.FormInputError_text {
+  color: var(--color-cardinal-red);
+  font-size: var(--font-sm);
+  margin-left: 8px;
+  font-family: var(--segoe);
+  font-weight: 700;
+}

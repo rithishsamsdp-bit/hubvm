@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socketioserver
+  namespace: connecthub
+  labels:
+    app: socketioserver
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: socketioserver
+  template:
+    metadata:
+      labels:
+        app: socketioserver
+    spec:
+      containers:
+      - name: socketioserver
+        image: DOCKER_IMAGE  # Replace with your Docker image name
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"

@@ -1,0 +1,17 @@
+.custom-tabletag {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  font-size: var(--font-xs);
+  font-weight: 700;
+  border-radius: 50px;
+  gap: 5px;
+  user-select: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.custom-tabletag-icon {
+  display: flex;
+  align-items: center;
+}
+

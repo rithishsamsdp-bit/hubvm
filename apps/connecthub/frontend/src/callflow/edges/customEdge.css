@@ -1,0 +1,10 @@
+.flow_custom_line{
+ width: 23px;   
+ height: 23px;
+ border-radius: 50%;
+ background-color: var(--color-primary);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+}

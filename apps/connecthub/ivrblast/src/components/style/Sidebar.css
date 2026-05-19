@@ -1,0 +1,66 @@
+/* Sidebar Container */
+.sidebar_container {
+    min-width: 75px;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--side_bar_background_color);
+    color: var(--side_bar_font_color);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 10px;
+}
+
+
+
+/* Wrapper for the Sidebar Menu */
+.sidebar_menu_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Individual Menu Item */
+.sidebar_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+}
+
+/* Hover Effect */
+.sidebar_menu:hover {
+    background-color: #1e1e29;
+    border-bottom: 1px solid var(--side_bar_active_icon_color);
+    border-top: 1px solid var(--side_bar_active_icon_color);
+}
+
+/* Active Menu Item */
+.sidebar_menu.active {
+    background-color: #1e1e29;
+    border-left: 4px solid var(--side_bar_active_icon_color);
+    /* Add a border to indicate active state */
+}
+
+/* Icon Styling */
+.sidebar_menu_icon {
+    color: var(--side_bar_icon_color);
+    font-size: var(--side_bar_icon_size);
+}
+
+
+.sidebar_menu_icon.active {
+    color: var(--side_bar_active_icon_color);
+}
+
+/* Text Styling */
+.sidebar_menu_name {
+    color: var(--side_bar_font_color);
+    font-size: var(--side_bar_font_size);
+    text-align: center;
+}

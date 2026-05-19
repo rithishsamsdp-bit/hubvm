@@ -1,0 +1,107 @@
+.waiting-call-popup {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  width: 300px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.waiting-call-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: #ff9f0a; /* Warning/Action color */
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.waiting-call-header span {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.waiting-call-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.waiting-caller-name {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.waiting-caller-number {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+}
+
+.waiting-call-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.waiting-btn {
+  flex: 1;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform 0.1s, opacity 0.2s;
+}
+
+.waiting-btn:active {
+  transform: scale(0.96);
+}
+
+.btn-answer {
+  background-color: #30d158;
+  color: white;
+}
+
+.btn-answer:hover {
+  background-color: #24b347;
+}
+
+.btn-hangup {
+  background-color: #ff453a;
+  color: white;
+}
+
+.btn-hangup:hover {
+  background-color: #d63a30;
+}

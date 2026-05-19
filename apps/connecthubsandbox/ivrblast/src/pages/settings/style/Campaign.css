@@ -1,0 +1,74 @@
+.Ivrblastcarriercampaign_container {
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+
+.Ivrblastcarriercampaign_header {
+    width: 100%;
+    background-color: var(--navbar_background_color);
+    border-bottom: 0.5px solid var(--navbar_border_color);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 6px;
+}
+
+.Ivrblastcarriercampaign_heading {
+    font-size: var(--normal_font_size);
+    font-weight: 500;
+    color: var(--black_font_color);
+}
+
+
+.Ivrblastcarriercampaign_header_input {
+    display: flex;
+    gap: 10px;
+}
+
+.Ivrblastcarriercampaign_search_input {
+    width: 250px;
+}
+
+.add_Ivrblastcarriercampaign_btn_icon {
+    font-size: var(--btn_font_size);
+}
+
+.add_Ivrblastcarriercampaign_form {
+    height: auto;
+    /* padding: 10px; */
+}
+
+.create_Ivrblastcarriercampaign_layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create_Ivrblastcarriercampaign_layout_last {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.Ivrblastcarriercampaign_filter_section {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.Ivrblastcarriercampaign_filters {
+    display: flex;
+    gap: 16px;
+}
+
+.Ivrblastcarriercampaign_edit_icon {
+    color: var(--secondary_color);
+    font-size: var(--btn_font_size);
+    margin-right: 10px;
+}
+
+.Ivrblastcarriercampaign_deletes_icon {
+    color: red;
+    font-size: var(--btn_font_size);
+}

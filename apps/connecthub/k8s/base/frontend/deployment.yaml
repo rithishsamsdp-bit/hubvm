@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connecthub-frontend
+  namespace: connecthub
+  labels:
+    app: connecthub-frontend
+spec:
+  replicas: 1  # Number of replicas
+  selector:
+    matchLabels:
+      app: connecthub-frontend
+  template:
+    metadata:
+      labels:
+        app: connecthub-frontend
+    spec:
+      containers:
+        - name: connecthub-frontend
+          image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/frontend:latest
+          ports:
+            - containerPort: 80  # Change to your app's port
+          env:  # Optional: Add environment variables
+            - name: NODE_ENV
+              value: "production"
+          resources:  # Optional: Define resource limits and requests
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"

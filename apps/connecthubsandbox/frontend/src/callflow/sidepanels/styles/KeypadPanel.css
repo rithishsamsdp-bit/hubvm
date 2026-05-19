@@ -1,0 +1,144 @@
+/* styles/KeypadPanel.css */
+.keypad-sidebar {
+  width: 100%;
+  background: #fff;
+  border-left: 1px solid #e0e0e0;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+.keypad-sidepanel-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.keypad-sidepanel-section-header p {
+  font-family: var(--segoe);
+  font-weight: 600;
+  font-size: var(--font-md);
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: var(--color-midnight-blue);
+}
+
+.keypad-sidepanel-input-label {
+  font-family: var(--segoe);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  color: var(--color-midnight-blue);
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+.keypad-panel-settings {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 0px 16px 16px 16px;
+}
+
+.keypad-panel-message-settings {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #EBEBEB;
+  padding: 0px 16px 16px 16px;
+}
+
+.keypad-panel-branch-settings {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0px 16px 16px 16px;
+}
+
+.keypad-sidepanel-branch-block-add-branch-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-black);
+  font-size: var(--font-sm);
+  font-family: var(--segoe);
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  cursor: pointer;
+  padding: 4px 0;
+  text-align: left;
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.keypad-sidepanel-branch-add-icon {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.keypad-panel-btn-items {
+  margin-top: 10px;
+  padding: 16px;
+  border: 1px solid #D7D7D7;
+  border-radius: var(--radius-md);
+}
+
+.keypad-panel-btn-items-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.keypad-panel-btn-items-header p {
+  font-family: var(--roboto);
+  font-weight: 500;
+  font-size: var(--font-sm);
+  line-height: 18px;
+  letter-spacing: 0.25%;
+  color: #303030
+}
+
+.keypad-sidepanel-number-select {
+  display: grid;
+  grid-template-columns: repeat(3, 30px);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.keypad-sidepanel-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.keypad-sidepanel-button.active {
+  background-color: #ff4d00;
+  color: var(--color-white);
+}
+
+.keypad-sidepanel-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.keypad-sidepanel-button[data-key="0"] {
+  grid-column: 2;
+}

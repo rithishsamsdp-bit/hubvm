@@ -1,0 +1,53 @@
+name: Key Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'k8/keys/**'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'k8/keys/**'
+
+
+
+env:
+  AWS_REGION: ap-south-1                   # set this to your preferred AWS region, e.g. us-west-1
+  ECR_REPOSITORY: connecthub_gateway_secret           # set this to your Amazon ECR repository name
+  ECS_CLUSTER: connecthub                 # set this to your Amazon ECS cluster name
+  ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION # set this to the path to your Amazon ECS task definition
+                                               # file, e.g. .aws/task-definition.json
+  CONTAINER_NAME: MY_CONTAINER_NAME           # set this to the name of the container in the
+                                               # containerDefinitions section of your task definition
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Update kube config
+      run: aws eks update-kubeconfig --name $ECS_CLUSTER --region $AWS_REGION
+
+    - name: Create TLS Secret
+      run: |
+        cat k8/keys/pulse.pem k8/keys/pulseca.pem > k8/keys/fullchain.pem
+        kubectl create -n connecthub secret tls pulsework360-credential --key=k8/keys/pulsekey.pem --cert=k8/keys/pulse.pem
+
+
+

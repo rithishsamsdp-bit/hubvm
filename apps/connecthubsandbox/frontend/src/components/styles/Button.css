@@ -1,0 +1,50 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--segoe);
+    font-size: var(--font-sm);
+    font-weight: 700;
+    padding: 4px 16px;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Primary variant */
+.btn--primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: 1px solid var(--color-primary);
+}
+
+.btn--primary:hover:not(:disabled) {
+    background-color: var(--color-primary);
+}
+
+/* Secondary variant */
+.btn--secondary {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.btn--secondary:hover:not(:disabled) {
+    background-color: var(--color-white);
+}
+
+/* empty varient */
+
+.btn--empty{
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+
+/* Disabled state */
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

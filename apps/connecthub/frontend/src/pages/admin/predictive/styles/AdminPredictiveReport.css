@@ -1,0 +1,59 @@
+.admin_predictive_report_container {
+    padding: 24px;
+    width: 100%;
+    height: calc(100% - 131px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 24px;
+}
+
+.admin_predictive_report_filter_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 16px;
+    gap: 30px;
+
+}
+
+.admin_predictive_report_filter_clear_button {
+    background-color: transparent;
+    border: none;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--sengo-ui-font-family);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.admin_predictive_report_filter_container input {
+    border-radius: 8px;
+}
+
+/* Follow Up Modal Notes */
+.admin_predictive_report_container .notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.admin_predictive_report_container .note-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 0;
+}
+
+.admin_predictive_report_container .note-key {
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+}
+
+.admin_predictive_report_container .note-value {
+    color: #555;
+    flex: 1;
+    text-align: right;
+}

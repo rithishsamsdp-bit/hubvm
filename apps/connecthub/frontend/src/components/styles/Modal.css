@@ -1,0 +1,50 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: #02375D59;
+  opacity: 0;
+  transition: opacity 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal-overlay-enter {
+  opacity: 1;
+}
+
+.modal-overlay-leave {
+  opacity: 0;
+}
+
+.modal-wrap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.modal-box {
+    background: var(--bg-ice-blue);
+  max-width: 95vw;
+  max-height: 95vh;
+  position: relative;
+  opacity: 0;
+  transform: scale(0.8) translateY(40px);
+}
+
+.modal-anim-enter.modal-anim-enter-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: 
+    opacity 0.28s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal-anim-leave.modal-anim-leave-active {
+  opacity: 0;
+  transform: scale(0.8) translateY(40px);
+  transition: 
+    opacity 0.28s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.28s cubic-bezier(0.23, 1, 0.32, 1);
+}

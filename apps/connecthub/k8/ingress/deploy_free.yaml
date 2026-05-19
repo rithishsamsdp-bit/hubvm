@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: freeswitch-connecthub
+  labels:
+    app: freeswitch
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: freeswitch
+  template:
+    metadata:
+      labels:
+        app: freeswitch
+    spec:
+      containers:
+      - name: freeswitch
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/freeswitch-connecthub:latest
+        ports:
+        - containerPort: 5060
+          protocol: TCP
+        - containerPort: 5060
+          protocol: UDP
+        - containerPort: 8021
+          protocol: TCP
+        - containerPort: 16384
+          protocol: UDP
+        - containerPort: 32768
+          protocol: UDP
+        securityContext:
+          capabilities:
+            add:
+              - NET_ADMIN
+        volumeMounts:
+        - mountPath: /etc/freeswitch
+          name: freeswitch-config
+      volumes:
+      - name: freeswitch-config
+        emptyDir: {}

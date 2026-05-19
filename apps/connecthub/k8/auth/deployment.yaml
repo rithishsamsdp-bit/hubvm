@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-auth
+  namespace: connecthub
+  labels:
+    app: fastapi-auth
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: fastapi-auth
+  template:
+    metadata:
+      labels:
+        app: fastapi-auth
+    spec:
+      containers:
+      - name: fastapi-auth
+        image: DOCKER_IMAGE  # Replace with your Docker image name
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: auth-token-secrets
+        - secretRef:
+            name: mysql-secrets
+        - secretRef:
+            name: prod-secrets
+        - secretRef:
+            name: freeswitch-secrets

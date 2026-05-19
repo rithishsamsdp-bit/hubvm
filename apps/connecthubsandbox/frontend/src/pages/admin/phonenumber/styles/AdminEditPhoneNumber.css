@@ -1,0 +1,201 @@
+.admin_edit_phonenumber {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.admin_edit_phonenumber_content {
+  padding: 24px 24px 50px 24px;
+  width: 100%;
+  height: calc(100vh - 90px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.admin_edit_phonenumber_content_1 {
+  width: 100%;
+  padding: 24px;
+  background-color: var(--bg-white);
+}
+
+.admin_edit_phonenumber_content_1_heading {
+  font-family: var(--roboto);
+  font-weight: 700;
+  font-size: var(--font-xxxl);
+  color: #001b3b;
+}
+
+.admin_edit_phonenumber_hr {
+  background-color: #cacccf;
+  height: 1px;
+  border: none;
+  margin-top: 11px;
+  margin-bottom: 11px;
+}
+
+.admin_edit_phonenumber_sub_text {
+  font-family: var(--roboto);
+  font-size: var(--font-md);
+  font-weight: 400;
+  color: #2e3751;
+}
+
+.admin_edit_phonenumber_text {
+  margin-top: 15px;
+  font-family: var(--roboto);
+  font-size: var(--font-xl);
+  font-weight: 700;
+  color: #2e3751;
+}
+
+.admin_edit_phonenumber_form {
+  margin-top: 20px;
+}
+
+.admin_edit_phonenumber_modal_form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.admin_edit_phonenumber_form_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin_edit_phonenumber_content_3 {
+  width: 100%;
+  padding: 24px;
+  background-color: var(--bg-white);
+}
+
+.admin_edit_phonenumber_content_3_heading {
+  font-family: var(--roboto);
+  font-weight: 700;
+  font-size: var(--font-xxxl);
+  color: #001b3b;
+}
+
+.admin_edit_phonenumber_btn_container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.api_selection_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.api_selection_card {
+  border: 1px solid #cacccf;
+  border-radius: 8px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.api_selection_card:hover {
+  border-color: var(--color-primary);
+}
+
+.api_selection_card.active {
+  border-color: var(--color-primary);
+  background-color: var(--bg-orange-light);
+  border-width: 2px;
+}
+
+.api_selection_card_header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.api_selection_radio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #cacccf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.api_selection_card.active .api_selection_radio {
+  border-color: var(--color-primary);
+}
+
+.api_selection_radio_inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  display: none;
+}
+
+.api_selection_card.active .api_selection_radio_inner {
+  display: block;
+}
+
+.api_selection_title {
+  font-family: var(--roboto);
+  font-size: var(--font-md);
+  font-weight: 700;
+  color: #001b3b;
+}
+
+.api_selection_card_desc {
+  font-family: var(--roboto);
+  font-size: var(--font-sm);
+  font-weight: 400;
+  color: #5f6b7a;
+  margin-left: 28px; /* Align with title */
+}
+.admin_edit_phonenumber .navbar_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin_edit_phonenumber_allowed_vars {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.admin_edit_phonenumber_vars_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.admin_edit_phonenumber_var_tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: #f0f4f8;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  color: #24292f;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.admin_edit_phonenumber_var_tag:hover {
+  background-color: #dce6f0;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}

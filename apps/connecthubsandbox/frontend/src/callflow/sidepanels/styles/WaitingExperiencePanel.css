@@ -1,0 +1,80 @@
+.waitingExperience-sidebar {
+    width: 100%;
+    background: #fff;
+    border-left: 1px solid #e0e0e0;
+    overflow-y: auto;
+    height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 30px;
+}
+
+.waitingExperience-panel-settings {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EBEBEB;
+    padding: 0px 16px 16px 16px;
+}
+
+.waitingExperience-sidepanel-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.waitingExperience-sidepanel-section-header p {
+    font-family: var(--segoe);
+    font-weight: 600;
+    font-size: var(--font-md);
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: var(--color-midnight-blue);
+}
+
+.waitingExperience-sidepanel-input-label {
+  font-family: var(--segoe);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  color: var(--color-midnight-blue);
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+.waitingExperience-panel-music-settings{
+        margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #EBEBEB;
+    padding: 0px 16px 16px 16px;
+}
+
+
+
+/* ////// */
+.waitingExperience-panel-music-settings-audio-bar {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 6px 12px;
+  width: 100%;
+  font-family: sans-serif;
+  margin-top: 10px;
+}
+
+.waitingExperience-panel-music-settings-play-btn,
+.waitingExperience-panel-music-settings-mute-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.waitingExperience-panel-music-settings-time-text {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+}
+
+

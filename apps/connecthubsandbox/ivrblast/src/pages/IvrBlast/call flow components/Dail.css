@@ -1,0 +1,41 @@
+.Dail-main-container{
+    width: 160px;
+    background-color: white;
+    padding: 16px;
+    border: 2px solid white;
+    border-radius: 5px;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .15s;
+}
+
+.Dail-main-container:hover{
+    border: 2px solid var(--primary_color_opacity);
+}
+.Dail-heding-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.Dail-heding-container::before {
+    content: "\2022";
+    color: var(--primary_color);
+    margin-right: 5px;
+    font-size: 35px;
+}
+
+.Dail-heding {
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 15px;
+}
+.queue-atten-call{
+    background-color: green !important;
+}
+
+.queue-hang-up{
+    background-color: red !important;
+margin-top: 50px;
+}

@@ -1,0 +1,19 @@
+services:
+  conferenceconsumer:
+    build:
+      context: ../..
+      dockerfile: docker/queueconsumer/Dockerfile
+    container_name: queueconsumer
+    working_dir: /app
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - connecthub_network
+    volumes:
+      - ../../queueconsumer/app:/app
+
+networks:
+  connecthub_network:
+    driver: bridge

@@ -1,0 +1,779 @@
+.iframe-dialpad-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: var(--bg-white);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* On larger screens, center it like a mobile app view if desired, or keep full width. 
+   User asked for "dialpad la irukura maari", which usually means the specific dimensions.
+   However, "dynamic ah resize panna ellame adpot ahgura maari" implies responsiveness.
+   Let's make it fill the iframe but maintain a max-width for sanity on very wide screens if logically needed, 
+   but for an iframe usually the parent controls the size. 
+   We will treat the container as the viewport.
+*/
+
+.iframe-dial-name {
+  font-size: 12px;
+}
+.iframe-dialpad-header {
+  font-weight: 400;
+  font-size: var(--font-sm);
+  font-family: var(--segoe);
+  color: var(--color-grey-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Added for better spacing */
+  margin-bottom: 20px;
+}
+
+.iframe-dialpad-campaign-select {
+  font-size: var(--font-sm);
+  font-family: var(--segoe);
+  font-weight: 700;
+  color: var(--color-dim-gray);
+  margin-left: 5px;
+  letter-spacing: 0.15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iframe-frame_icon {
+  width: 10px;
+  height: 5px;
+  margin-left: 4px;
+}
+
+.iframe-dialpad-numlabel {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  font-family: var(--segoe);
+  color: var(--color-midnight-blue);
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  margin-bottom: 6px;
+}
+
+.iframe-dialpad-input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccd3da;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-white);
+  position: relative;
+  height: 50px; /* Slight increase for touch/responsive */
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.iframe-dialpad-country-selector {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 8px; /* Increased padding */
+}
+
+.iframe-country-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-white);
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 300px; /* Increased max-height */
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+.iframe-dialpad-flag-icon {
+  margin-right: 8px;
+}
+
+.iframe-dialpad-country-name {
+  color: var(--color-steel-blue);
+  font-size: var(--font-sm);
+  font-weight: 400;
+  font-family: var(--lato);
+}
+
+.iframe-dialpad-country-code {
+  color: var(--color-deep-sea-blue);
+  font-size: var(--font-sm);
+  font-weight: 400;
+  font-family: var(--lato);
+  margin-left: 4px;
+}
+
+.iframe-dialpad-input-field {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 18px; /* Larger font for input */
+  font-weight: 400;
+  font-family: var(--lato);
+  color: var(--color-steel-blue);
+  padding: 0 10px;
+}
+
+.iframe-dialpad-contact-icon {
+  margin-right: 6px;
+}
+
+.iframe-dialpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px; /* Increased gap */
+  margin-bottom: 20px;
+  flex: 1; /* Allow grid to take available space */
+  align-content: center; /* Center buttons vertically if space allows */
+}
+
+.iframe-dial-button {
+  height: 100%; /* Fill the grid cell */
+  min-height: 60px; /* Minimum height for touch */
+  max-height: 80px;
+  border: none;
+  background-color: var(--bg-gallery-gray);
+  border-radius: 16px; /* modern rounded corners */
+  font-size: 24px; /* Larger font */
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--roboto);
+  color: #00201c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.iframe-dial-button:active {
+  background-color: #d1d5db;
+}
+
+.iframe-dailpad-number-letters {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: var(--roboto);
+  color: var(--color-smoky-teal);
+  margin-left: 8px;
+  line-height: 16px;
+}
+
+.iframe-dialpad-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+  padding-bottom: 10px;
+}
+
+.iframe-dialpad-footer {
+  display: flex;
+  justify-content: space-around; /* Distribute buttons evenly */
+  align-items: center;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.iframe-dialpad-status {
+  margin-top: 8px;
+  font-size: 13px;
+  font-family: var(--segoe);
+  color: var(--color-grey-light);
+  text-align: center;
+}
+
+.iframe-dialpad-country-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px; /* Larger touch targets */
+  cursor: pointer;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.iframe-dialpad-country-option:hover {
+  background-color: var(--bg-smoke);
+}
+
+.iframe-dialpad-country-option .flag-icon {
+  margin-right: 14px;
+  width: 24px;
+  height: auto;
+}
+
+.iframe-campaign-dropdown {
+  position: absolute;
+  top: 50px; /* Adjust based on header */
+  left: 20px;
+  right: 20px; /* Full width minus padding */
+  background-color: var(--bg-white);
+  border: 1px solid #e0e5eb;
+  border-radius: 8px;
+  box-shadow: 0px 8px 24px rgba(0, 32, 73, 0.12);
+  white-space: nowrap;
+  z-index: 100;
+  padding: 8px 0;
+  width: auto;
+  animation: slideDown 0.2s ease-out;
+}
+
+/* ... (Keep existing Campaign dropdown styles from dialpad.css but ensure no fixed widths causing overflow) ... */
+.iframe-campaign-dropdown {
+  min-width: unset; /* Override fixed width */
+  max-width: unset;
+}
+
+/* Copying rest of the styles needed for campaigns and contacts */
+.iframe-campaign-dropdown-header {
+  padding: 10px 16px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--segoe);
+  color: #5f6368;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #f0f2f5;
+  background-color: #fafbfc;
+}
+
+.iframe-campaign-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.15s ease;
+  font-family: var(--segoe);
+  font-size: 14px;
+  color: #001e4f;
+  border-bottom: 1px solid #f5f7fa;
+  position: relative;
+}
+
+.iframe-campaign-option:hover {
+  background-color: #ffede4;
+}
+
+.iframe-campaign-option.selected {
+  background-color: #ffede4;
+  color: #ff5200;
+  font-weight: 600;
+}
+
+.iframe-campaign-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.iframe-campaign-option-name {
+  font-weight: 500;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.iframe-campaign-option-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--segoe);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+.iframe-campaign-option-badge.individual {
+  background-color: #fff4e5;
+  color: #e37400;
+}
+.iframe-campaign-option-badge.active {
+  background-color: #e6f4ea;
+  color: #1e8e3e;
+}
+
+.iframe-campaign-option-icon {
+  margin-right: 10px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: #f0f2f5;
+  color: #5f6368;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.iframe-campaign-option-checkmark {
+  margin-left: 10px;
+  flex-shrink: 0;
+  color: #ff5200;
+  font-size: 16px;
+}
+
+.iframe-contacts-panel {
+  position: absolute;
+  top: 100%;
+  left: 0; /* Align left */
+  right: 0; /* Align right to fill */
+  width: 100%;
+  background: var(--bg-white);
+  border: 1px solid #ddd;
+  border-radius: var(--radius-md);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-height: 222px;
+  max-height: 50vh; /* Use vh for dynamic height */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.iframe-contacts-search-wrapper {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.iframe-contacts-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.iframe-contact-option {
+  padding: 12px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #001e4f;
+  font-family: var(--segoe);
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.iframe-contact-option:hover {
+  background-color: #f0f2f5;
+}
+
+.iframe-contact-option-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #001e4f;
+}
+
+.iframe-contact-option-phone {
+  font-size: 12px;
+  color: #5f6368;
+  font-weight: 400;
+}
+
+.iframe-agent-option {
+  background-color: #fafafa;
+}
+
+.iframe-no-results {
+  padding: 20px 14px;
+  text-align: center;
+  color: #9e9e9e;
+  font-size: 14px;
+  font-family: var(--segoe);
+  font-style: italic;
+}
+
+/* Responsive specific overrides for very small screens if necessary */
+
+/* ... existing styles ... */
+
+/* ----------------------------------------------------------------
+   In-Call Screen Styles
+   ---------------------------------------------------------------- */
+
+.iframe-incall-view {
+  align-items: center;
+  justify-content: space-between; /* Header top, Controls middle, Footer bottom */
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: var(
+    --bg-white
+  ); /* Or a gradient/dark theme if requested later */
+}
+
+.iframe-incall-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.iframe-incall-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-family: var(--segoe);
+}
+
+.iframe-incall-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0 0 4px 0;
+  font-family: var(--segoe);
+}
+
+.iframe-incall-number {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0 0 8px 0;
+  font-family: var(--lato);
+}
+
+.iframe-incall-status {
+  font-size: 14px;
+  font-weight: 500;
+  color: #10b981; /* Green for connected usually */
+  margin: 0 0 8px 0;
+  font-family: var(--segoe);
+}
+
+.iframe-incall-timer {
+  font-size: 16px;
+  font-weight: 400;
+  color: #475569;
+  font-family: monospace; /* For steady alignment */
+}
+
+.iframe-incall-controls {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: auto; /* Push footer down */
+}
+
+.iframe-incall-control-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  font-family: var(--segoe);
+  font-size: 12px;
+  transition: transform 0.1s;
+}
+
+.iframe-incall-control-btn div {
+  /* The Icon container from CallingIcon might be wrapped or SVG directly */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #ffffff; /* CallingBar Dark Gray */
+  color: #363636; /* Ensure icons are white */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.iframe-incall-control-btn span {
+  font-weight: 500;
+}
+
+.iframe-incall-control-btn:hover div {
+  background-color: #f0f2f5; /* Light Gray Hover */
+}
+
+.iframe-incall-control-btn:active {
+  transform: scale(0.95);
+}
+
+/* Active State (Muted, Hold) */
+.iframe-incall-control-btn.active div {
+  background-color: #363636; /* CallingBar Active White */
+  color: #ffffff; /* Invert icon color for visibility */
+}
+
+.iframe-incall-footer {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.iframe-incall-hangup-btn {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.iframe-incall-hangup-btn:hover {
+  background-color: #dc2626;
+}
+
+.iframe-incall-hangup-btn:active {
+  transform: scale(0.95);
+}
+
+/* DTMF Overlay/Container */
+.iframe-incall-dtmf-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  flex: 1; /* Take remaining space */
+}
+
+.iframe-dtmf-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.iframe-dtmf-status {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  color: #334155;
+  margin-right: 40px; /* Compensate for back btn width to center text */
+}
+
+.iframe-back-btn {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Override DTMFPad internal styles for Iframe context */
+.iframe-incall-dtmf-container .dtmf-container {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.iframe-incall-dtmf-container .dtmf-input-container {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.iframe-incall-dtmf-container .dtmf-input {
+  flex: 1;
+  height: 40px;
+  border: 1px solid #ccd3da;
+  border-radius: 8px;
+  padding: 0 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.iframe-incall-dtmf-container .dtmf-send-button {
+  height: 40px;
+  padding: 0 20px;
+  background-color: #2fc522;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.iframe-incall-dtmf-container .dtmf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  flex: 1;
+  align-content: center;
+}
+
+.iframe-incall-dtmf-container .dtmf-dial-button {
+  height: 100%;
+  min-height: 60px;
+  max-height: 80px;
+  border: none;
+  background-color: var(--bg-gallery-gray);
+  border-radius: 16px;
+  font-size: 24px;
+  font-weight: 400;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #00201c;
+  transition: background-color 0.2s;
+}
+
+.iframe-incall-dtmf-container .dtmf-dial-button:active {
+  background-color: #d1d5db;
+}
+
+.iframe-incall-dtmf-container .dial-number {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.iframe-incall-dtmf-container .dial-letters {
+  font-size: 10px;
+  color: var(--color-smoky-teal);
+  margin-top: 4px;
+}
+
+/* Reuse existing keyframe animations if needed */
+
+/* ----------------------------------------------------------------
+   Incoming Call Screen Styles
+   ---------------------------------------------------------------- */
+
+.iframe-incoming-call-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.iframe-incoming-actions {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  margin-top: auto;
+}
+
+.iframe-action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  font-family: var(--segoe);
+  font-size: 14px;
+  font-weight: 500;
+  transition: transform 0.1s;
+}
+
+.iframe-action-btn:active {
+  transform: scale(0.95);
+}
+
+.iframe-action-btn span {
+  font-weight: 600;
+}
+
+.answer-btn {
+  color: #2fc522;
+}
+
+.reject-btn {
+  color: #ef4444;
+}
+
+.answer-btn div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2fc522;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(47, 197, 34, 0.4);
+  animation: pulse-green 2s infinite;
+}
+
+.reject-btn div {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.4);
+}
+
+.heartbeat-animation {
+  animation: heartbeat 1.5s ease-in-out infinite both;
+  box-shadow: 0 0 0 0 rgba(100, 116, 139, 0.7);
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(100, 116, 139, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(100, 116, 139, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(100, 116, 139, 0);
+  }
+}
+
+@keyframes pulse-green {
+  0% {
+    box-shadow: 0 0 0 0 rgba(47, 197, 34, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(47, 197, 34, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(47, 197, 34, 0);
+  }
+}

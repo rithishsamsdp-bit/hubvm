@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oldivrblast
+  namespace: connecthub
+  labels:
+    app: oldivrblast
+spec:
+  replicas: 1  # Number of replicas
+  selector:
+    matchLabels:
+      app: oldivrblast
+  template:
+    metadata:
+      labels:
+        app: oldivrblast
+    spec:
+      containers:
+        - name: oldivrblast
+          image: DOCKER_IMAGE  # Replace with your Docker image
+          ports:
+            - containerPort: 80  # Change to your app's port
+          env:  # Optional: Add environment variables
+            - name: NODE_ENV
+              value: "production"

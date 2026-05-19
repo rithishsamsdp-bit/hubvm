@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-chat
+  namespace: connecthub
+  labels:
+    app: fastapi-chat
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-chat
+  template:
+    metadata:
+      labels:
+        app: fastapi-chat
+    spec:
+      containers:
+        - name: fastapi-chat
+          image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/chat-backend:latest
+          ports:
+            - containerPort: 5060
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+            requests:
+              memory: "256Mi"
+              cpu: "250m"
+          envFrom:
+            - secretRef:
+                name: auth-token-secrets
+            - secretRef:
+                name: mysql-secrets
+            - secretRef:
+                name: prod-secrets
+          env:
+            - name: DB_NAME
+              value: "connecthub_chat"
+            - name: PORT
+              value: "5060"

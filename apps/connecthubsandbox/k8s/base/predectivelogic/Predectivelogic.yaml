@@ -1,0 +1,91 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-predective
+  namespace: connecthub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-predective
+  template:
+    metadata:
+      labels:
+        app: fastapi-predective
+    spec:
+      containers:
+        - name: fastapi-logic
+          image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/predictivelogic  # Replace with your Docker image name
+          envFrom:
+            - secretRef:
+                name: kafka-details
+            - secretRef:
+                name: mysql-details
+            - secretRef:
+                name: mongo-details
+            - secretRef:
+                name: redis-details
+            - secretRef:
+                name: predective-freeswitch-details
+          resources:
+              limits:
+                memory: "256Mi"
+                cpu: "500m"
+              requests:
+                memory: "128Mi"
+                cpu: "250m"
+
+        - name: fastapi-monitor
+          image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/fastapi-monitor  # Replace with your Docker image name
+          envFrom:
+            - secretRef:
+                name: kafka-details
+            - secretRef:
+                name: mysql-details
+            - secretRef:
+                name: mongo-details
+            - secretRef:
+                name: redis-details
+            - secretRef:
+                name: predective-freeswitch-details
+          resources:
+              limits:
+                memory: "256Mi"
+                cpu: "500m"
+              requests:
+                memory: "128Mi"
+                cpu: "250m"
+
+        - name: fastapi-originate
+          image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/fastapi-originate  # Replace with your Docker image name
+          envFrom:
+            - secretRef:
+                name: kafka-details
+            - secretRef:
+                name: mysql-details
+            - secretRef:
+                name: mongo-details
+            - secretRef:
+                name: redis-details
+            - secretRef:
+                name: predective-freeswitch-details
+          resources:
+              limits:
+                memory: "256Mi"
+                cpu: "500m"
+              requests:
+                memory: "128Mi"
+                cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-predective
+  namespace: connecthub
+spec:
+  selector:
+    app: fastapi-predective
+  ports:
+    - name: producer
+      port: 3000
+      targetPort: 3000

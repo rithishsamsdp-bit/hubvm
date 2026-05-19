@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emergency-ivr-consumer
+  namespace: connecthub
+  labels:
+    app: emergency-ivr-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emergency-ivr-consumer
+  template:
+    metadata:
+      labels:
+        app: emergency-ivr-consumer
+    spec:
+      containers:
+      - name: emergency-ivr-consumer
+        image: DOCKER_IMAGE
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: kafka-details

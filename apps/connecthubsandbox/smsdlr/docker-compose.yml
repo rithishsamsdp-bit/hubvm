@@ -1,0 +1,19 @@
+services:
+  whatsappdlr:
+    build:
+      context: ../..
+      dockerfile: docker/whatsappdlr/Dockerfile
+    container_name: whatsappdlr
+    working_dir: /app
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    networks:
+      - connecthub_network
+    volumes:
+      - ../../whatsappdlr/app:/app
+
+networks:
+  connecthub_network:
+    driver: bridge

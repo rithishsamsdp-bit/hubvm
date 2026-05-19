@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@font-face {
+  font-family: 'Segoe UI', sans-serif;
+  src: url('./assets/fonts/segoe/SegoeUI.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Inter', sans-serif;
+  src: url('./assets/fonts/inter/Inter[slnt\,wght].ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Lato', sans-serif;
+  src: url('./assets/fonts/lato/Lato-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('./assets/fonts/roboto/Roboto-Medium.ttf') format('truetype');
+}
+
+
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-heading: var(--font-sans);
+  --font-sans: 'Inter', sans-serif;
+  
+  --color-background: #F1F5F9;
+  --color-foreground: #020617;
+  
+  --color-card: #FFFFFF;
+  --color-card-foreground: #020617;
+  
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #020617;
+  
+  --color-primary: #ff5200;
+  --color-primary-foreground: #FFFFFF;
+  
+  --color-secondary: #f1f5f9;
+  --color-secondary-foreground: #0f172a;
+  
+  --color-muted: #f1f5f9;
+  --color-muted-foreground: #64748b;
+  
+  --color-accent: #f1f5f9;
+  --color-accent-foreground: #0f172a;
+  
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #f8fafc;
+  
+  --color-border: #e2e8f0;
+  --color-input: #e2e8f0;
+  --color-ring: #ff5200;
+  
+  --radius: 0.625rem;
+
+  --color-sidebar: #ffffff;
+  --color-sidebar-foreground: #334155;
+  --color-sidebar-primary: #ff5200;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #f1f5f9;
+  --color-sidebar-accent-foreground: #334155;
+  --color-sidebar-border: #e2e8f0;
+  --color-sidebar-ring: #ff5200;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}

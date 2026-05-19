@@ -1,0 +1,42 @@
+# Core async/sync web framework
+fastapi==0.115.5
+uvicorn==0.32.1
+gunicorn
+
+# Auth & security
+bcrypt==3.2.2
+passlib==1.7.4
+argon2-cffi==25.1.0
+PyJWT==2.10.1
+
+# Database (synchronous MySQL connector + SQLAlchemy ORM)
+mysql-connector-python>=9.4.0
+SQLAlchemy==2.0.36
+
+# Kafka (synchronous client)
+confluent-kafka==2.11.1
+
+# Networking / HTTP
+requests>=2.32.0
+urllib3>=2.5.0
+
+# Realtime communication
+python-socketio>=5.13.0
+websocket-client>=1.8.0
+
+# Serialization / validation
+pydantic[email]==2.10.5
+
+# Templates
+jinja2
+
+# SAML / XML support
+python3-saml
+python-multipart
+lxml==4.9.3
+xmlsec==1.3.13
+
+asyncmy==0.2.9
+PyMySQL==1.1.1
+aiokafka==0.12.0
+pytz==2024.2

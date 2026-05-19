@@ -1,0 +1,683 @@
+Postman x-www-form-urlencoded Format for FreeSWITCH Request
+
+Key: hostname
+Value: ip-10-0-4-19
+
+Key: section
+Value: dialplan
+
+Key: Event-Name
+Value: REQUEST_PARAMS
+
+Key: Core-UUID
+Value: 6932955c-d23d-4ef5-8524-bd1db386546b
+
+Key: FreeSWITCH-Hostname
+Value: ip-10-0-4-19
+
+Key: FreeSWITCH-Switchname
+Value: ip-10-0-4-19
+
+Key: FreeSWITCH-IPv4
+Value: 10.0.4.19
+
+Key: FreeSWITCH-IPv6
+Value: ::1
+
+Key: Event-Date-Local
+Value: 2025-10-27 17:29:30
+
+Key: Event-Date-GMT
+Value: Mon, 27 Oct 2025 11:59:30 GMT
+
+Key: Event-Date-Timestamp
+Value: 1761566370070009
+
+Key: Event-Calling-File
+Value: mod_dialplan_xml.c
+
+Key: Event-Calling-Function
+Value: dialplan_xml_locate
+
+Key: Event-Calling-Line-Number
+Value: 610
+
+Key: Event-Sequence
+Value: 186856
+
+Key: Channel-State
+Value: CS_ROUTING
+
+Key: Channel-Call-State
+Value: RINGING
+
+Key: Channel-State-Number
+Value: 2
+
+Key: Channel-Name
+Value: sofia/internal/+916374375763@103.249.81.60
+
+Key: Unique-ID
+Value: a64ebe0e-7fb1-4e11-b431-1ad7d612093a
+
+Key: Call-Direction
+Value: inbound
+
+Key: Presence-Call-Direction
+Value: inbound
+
+Key: Channel-HIT-Dialplan
+Value: true
+
+Key: Channel-Call-UUID
+Value: a64ebe0e-7fb1-4e11-b431-1ad7d612093a
+
+Key: Answer-State
+Value: answered
+
+Key: Channel-Read-Codec-Name
+Value: PCMU
+
+Key: Channel-Read-Codec-Rate
+Value: 8000
+
+Key: Channel-Read-Codec-Bit-Rate
+Value: 64000
+
+Key: Channel-Write-Codec-Name
+Value: PCMU
+
+Key: Channel-Write-Codec-Rate
+Value: 8000
+
+Key: Channel-Write-Codec-Bit-Rate
+Value: 64000
+
+Key: Caller-Direction
+Value: inbound
+
+Key: Caller-Logical-Direction
+Value: inbound
+
+Key: Caller-Username
+Value: +916374375763
+
+Key: Caller-Dialplan
+Value: XML
+
+Key: Caller-Caller-ID-Name
+Value: Unavailable
+
+Key: Caller-Caller-ID-Number
+Value: +916374375763
+
+Key: Caller-Orig-Caller-ID-Name
+Value: Unavailable
+
+Key: Caller-Orig-Caller-ID-Number
+Value: +916374375763
+
+Key: Caller-Callee-ID-Name
+Value: Outbound Call
+
+Key: Caller-Callee-ID-Number
+Value: 361002
+
+Key: Caller-Network-Addr
+Value: 10.0.4.114
+
+Key: Caller-ANI
+Value: +916374375763
+
+Key: Caller-Destination-Number
+Value: 918939075990
+
+Key: Caller-Unique-ID
+Value: a64ebe0e-7fb1-4e11-b431-1ad7d612093a
+
+Key: Caller-Source
+Value: mod_sofia
+
+Key: Caller-Transfer-Source
+Value: 1761566370:5ad44f15-a3e0-403f-9804-5914fc652f46:bl_xfer:918939075990/public/XML
+
+Key: Caller-Context
+Value: public
+
+Key: Caller-RDNIS
+Value: pulseInbound
+
+Key: Caller-Channel-Name
+Value: sofia/internal/+916374375763@103.249.81.60
+
+Key: Caller-Profile-Index
+Value: 3
+
+Key: Caller-Profile-Created-Time
+Value: 1761566370049989
+
+Key: Caller-Channel-Created-Time
+Value: 1761566360909989
+
+Key: Caller-Channel-Answered-Time
+Value: 1761566361190011
+
+Key: Caller-Channel-Progress-Time
+Value: 0
+
+Key: Caller-Channel-Progress-Media-Time
+Value: 1761566361110013
+
+Key: Caller-Channel-Hangup-Time
+Value: 0
+
+Key: Caller-Channel-Transfer-Time
+Value: 0
+
+Key: Caller-Channel-Resurrect-Time
+Value: 0
+
+Key: Caller-Channel-Bridged-Time
+Value: 0
+
+Key: Caller-Channel-Last-Hold
+Value: 0
+
+Key: Caller-Channel-Hold-Accum
+Value: 0
+
+Key: Caller-Screen-Bit
+Value: true
+
+Key: Caller-Privacy-Hide-Name
+Value: false
+
+Key: Caller-Privacy-Hide-Number
+Value: false
+
+Key: variable_direction
+Value: inbound
+
+Key: variable_uuid
+Value: a64ebe0e-7fb1-4e11-b431-1ad7d612093a
+
+Key: variable_session_id
+Value: 1815
+
+Key: variable_sip_from_user
+Value: +916374375763
+
+Key: variable_sip_from_uri
+Value: +916374375763@103.249.81.60
+
+Key: variable_sip_from_host
+Value: 103.249.81.60
+
+Key: variable_video_media_flow
+Value: disabled
+
+Key: variable_text_media_flow
+Value: disabled
+
+Key: variable_channel_name
+Value: sofia/internal/+916374375763@103.249.81.60
+
+Key: variable_sip_local_network_addr
+Value: 10.0.4.19
+
+Key: variable_sip_network_ip
+Value: 10.0.4.114
+
+Key: variable_sip_network_port
+Value: 5182
+
+Key: variable_sip_invite_stamp
+Value: 1761566360909989
+
+Key: variable_sip_received_ip
+Value: 10.0.4.114
+
+Key: variable_sip_received_port
+Value: 5182
+
+Key: variable_sip_via_protocol
+Value: udp
+
+Key: variable_sip_from_user_stripped
+Value: 916374375763
+
+Key: variable_sofia_profile_name
+Value: internal
+
+Key: variable_sofia_profile_url
+Value: sip:mod_sofia@10.0.4.19:5060
+
+Key: variable_recovery_profile_name
+Value: internal
+
+Key: variable_sip_invite_route_uri
+Value: <sip:13.201.218.156:5182;lr;ftag=as6fe9f2d8;did=30f.98c80b56>
+
+Key: variable_sip_invite_record_route
+Value: <sip:13.201.218.156:5182;lr;ftag=as6fe9f2d8;did=30f.98c80b56>
+
+Key: variable_sip_allow
+Value: INVITE, ACK, CANCEL, OPTIONS, BYE, REFER, SUBSCRIBE, NOTIFY, INFO, PUBLISH, MESSAGE
+
+Key: variable_sip_req_params
+Value: transport=udp
+
+Key: variable_sip_req_user
+Value: pulseInbound
+
+Key: variable_sip_req_uri
+Value: pulseInbound@10.0.4.19
+
+Key: variable_sip_req_host
+Value: 10.0.4.19
+
+Key: variable_sip_to_user
+Value: 914446824217
+
+Key: variable_sip_to_port
+Value: 5182
+
+Key: variable_sip_to_uri
+Value: 914446824217@13.201.218.156:5182
+
+Key: variable_sip_to_host
+Value: 13.201.218.156
+
+Key: variable_sip_contact_user
+Value: +916374375763
+
+Key: variable_sip_contact_port
+Value: 5060
+
+Key: variable_sip_contact_uri
+Value: +916374375763@103.249.81.60:5060
+
+Key: variable_sip_contact_host
+Value: 103.249.81.60
+
+Key: variable_sip_user_agent
+Value: Asterisk PBX 18.14.0
+
+Key: variable_sip_via_host
+Value: 13.201.218.156
+
+Key: variable_sip_via_port
+Value: 5182
+
+Key: variable_sip_date_epoch_time
+Value: 1761566119
+
+Key: variable_sip_h_X-cust
+Value: +916374375763
+
+Key: variable_switch_r_sdp
+Value: v=0\r\no=root 430687451 430687451 IN IP4 3.108.94.72\r\ns=Asterisk PBX 18.14.0\r\nc=IN IP4 3.108.94.72\r\nt=0 0\r\nm=audio 52612 RTP/AVP 0 8 101\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:101 telephone-event/8000\r\na=fmtp:101 0-16\r\na=maxptime:150\r\na=rtcp:52613\r\na=ptime:20\r\n
+
+Key: variable_ep_codec_string
+Value: CORE_PCM_MODULE.PCMU@8000h@20i@64000b,CORE_PCM_MODULE.PCMA@8000h@20i@64000b
+
+Key: variable_rtp_use_codec_string
+Value: PCMA,PCMU
+
+Key: variable_remote_video_media_flow
+Value: inactive
+
+Key: variable_remote_text_media_flow
+Value: inactive
+
+Key: variable_remote_audio_media_flow
+Value: sendrecv
+
+Key: variable_audio_media_flow
+Value: sendrecv
+
+Key: variable_rtp_remote_audio_rtcp_port
+Value: 52613
+
+Key: variable_rtp_audio_recv_pt
+Value: 0
+
+Key: variable_rtp_use_codec_name
+Value: PCMU
+
+Key: variable_rtp_use_codec_rate
+Value: 8000
+
+Key: variable_rtp_use_codec_ptime
+Value: 20
+
+Key: variable_rtp_use_codec_channels
+Value: 1
+
+Key: variable_rtp_last_audio_codec_string
+Value: PCMU@8000h@20i@1c
+
+Key: variable_read_codec
+Value: PCMU
+
+Key: variable_original_read_codec
+Value: PCMU
+
+Key: variable_read_rate
+Value: 8000
+
+Key: variable_original_read_rate
+Value: 8000
+
+Key: variable_write_codec
+Value: PCMU
+
+Key: variable_write_rate
+Value: 8000
+
+Key: variable_dtmf_type
+Value: rfc2833
+
+Key: variable_DP_MATCH
+Value: ARRAY::pulseInbound|:pulseInbound
+
+Key: variable_session_in_hangup_hook
+Value: true
+
+Key: variable_r_accountId
+Value: 36
+
+Key: variable_r_accountNo
+Value: 361471072472
+
+Key: variable_bypass_media
+Value: false
+
+Key: variable_ringback
+Value: %(2000,4000,440,480)
+
+Key: variable_sip_h_X-cliphonenumber
+Value: 914446824217
+
+Key: variable_sip_sticky_contact
+Value: true
+
+Key: variable_RECORD_STEREO
+Value: true
+
+Key: variable_hiredis_raw_response
+Value: 7
+
+Key: variable_nolocal:execute_on_answer
+Value: lua /opt/freeswitch/storage/script/inbound_answer.lua a64ebe0e-7fb1-4e11-b431-1ad7d612093a 36 361471072472 10516
+
+Key: variable_export_vars
+Value: nolocal:execute_on_answer
+
+Key: variable_local_media_ip
+Value: 10.0.4.19
+
+Key: variable_local_media_port
+Value: 25816
+
+Key: variable_advertised_media_ip
+Value: 10.0.4.19
+
+Key: variable_rtp_use_timer_name
+Value: soft
+
+Key: variable_rtp_use_pt
+Value: 0
+
+Key: variable_rtp_use_ssrc
+Value: 1229664272
+
+Key: variable_rtp_2833_send_payload
+Value: 101
+
+Key: variable_rtp_2833_recv_payload
+Value: 101
+
+Key: variable_remote_media_ip
+Value: 3.108.94.72
+
+Key: variable_remote_media_port
+Value: 52612
+
+Key: variable_api_hangup_hook
+Value: lua /opt/freeswitch/storage/script/inbound_post_data.lua BROWSER
+
+Key: variable_c_accountId
+Value: 36
+
+Key: variable_c_accountNo
+Value: 361471072472
+
+Key: variable_c_clinumberId
+Value: 10516
+
+Key: variable_rtp_local_sdp_str
+Value: v=0\r\no=FreeSWITCH 1761540545 1761540547 IN IP4 10.0.4.19\r\ns=FreeSWITCH\r\nc=IN IP4 10.0.4.19\r\nt=0 0\r\nm=audio 25816 RTP/AVP 0 101\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:101 telephone-event/8000\r\na=fmtp:101 0-15\r\na=ptime:20\r\na=sendrecv\r\na=rtcp:25817 IN IP4 10.0.4.19\r\n
+
+Key: variable_sip_nat_detected
+Value: true
+
+Key: variable_endpoint_disposition
+Value: ANSWER
+
+Key: variable_current_application_data
+Value: 4041419997318819823@361471072472
+
+Key: variable_current_application
+Value: callcenter
+
+Key: variable_cc_side
+Value: member
+
+Key: variable_cc_member_uuid
+Value: d73830a1-2246-420e-887f-a4fcd678af3d
+
+Key: variable_cc_queue_joined_epoch
+Value: 1761566361
+
+Key: variable_cc_queue
+Value: 4041419997318819823@361471072472
+
+Key: variable_sip_to_tag
+Value: 574c5617QK6pN
+
+Key: variable_sip_from_tag
+Value: as6fe9f2d8
+
+Key: variable_sip_cseq
+Value: 102
+
+Key: variable_sip_call_id
+Value: 79985f2d0e3d7e25785d201f26d644c6@103.249.81.60:5060
+
+Key: variable_sip_full_via
+Value: SIP/2.0/UDP 13.201.218.156:5182;branch=z9hG4bK4dd7.20e9e552.2;received=10.0.4.114,SIP/2.0/UDP 103.249.81.60:5060;received=103.249.81.60;branch=z9hG4bK0349f130;rport=5060
+
+Key: variable_sip_from_display
+Value: Unavailable
+
+Key: variable_sip_full_from
+Value: "Unavailable" <sip:+916374375763@103.249.81.60>;tag=as6fe9f2d8
+
+Key: variable_sip_full_to
+Value: <sip:914446824217@13.201.218.156:5182>;tag=574c5617QK6pN
+
+Key: variable_cc_agent_uuid
+Value: 5ac1d894-aff4-4cf1-991f-51ba9fd06d96
+
+Key: variable_original_destination_number
+Value: pulseInbound
+
+Key: variable_original_caller_id_name
+Value: Unavailable
+
+Key: variable_original_caller_id_number
+Value: +916374375763
+
+Key: variable_transfer_history
+Value: ARRAY::1761566364:fadeac83-2cc8-4a07-be5d-d8907c36781b:uuid_br:5ac1d894-aff4-4cf1-991f-51ba9fd06d96|:1761566370:5ad44f15-a3e0-403f-9804-5914fc652f46:bl_xfer:918939075990/public/XML
+
+Key: variable_playback_last_offset_pos
+Value: 23520
+
+Key: variable_playback_seconds
+Value: 2
+
+Key: variable_playback_ms
+Value: 2960
+
+Key: variable_playback_samples
+Value: 23680
+
+Key: variable_cc_cause
+Value: answered
+
+Key: variable_last_bridge_to
+Value: 5ac1d894-aff4-4cf1-991f-51ba9fd06d96
+
+Key: variable_bridge_channel
+Value: sofia/external/361002@10.0.4.114:5182
+
+Key: variable_bridge_uuid
+Value: 5ac1d894-aff4-4cf1-991f-51ba9fd06d96
+
+Key: variable_cc_agent_bridged
+Value: true
+
+Key: variable_last_sent_callee_id_name
+Value: Outbound Call
+
+Key: variable_last_sent_callee_id_number
+Value: 361002
+
+Key: variable_cc_agent
+Value: 361002@4041419997318819823
+
+Key: variable_cc_queue_answered_epoch
+Value: 1761566366
+
+Key: variable_sip_h_Referred-By
+Value: <sip:361002@13.201.218.156>
+
+Key: variable_sip_refer_to
+Value: sip:918939075990@pulse-proxy-1.pulsework360.com
+
+Key: variable_max_forwards
+Value: 68
+
+Key: variable_transfer_source
+Value: 1761566370:5ad44f15-a3e0-403f-9804-5914fc652f46:bl_xfer:918939075990/public/XML
+
+Key: variable_bridge_hangup_cause
+Value: NORMAL_CLEARING
+
+Key: variable_call_uuid
+Value: a64ebe0e-7fb1-4e11-b431-1ad7d612093a
+
+Key: Hunt-Direction
+Value: inbound
+
+Key: Hunt-Logical-Direction
+Value: inbound
+
+Key: Hunt-Username
+Value: +916374375763
+
+Key: Hunt-Dialplan
+Value: XML
+
+Key: Hunt-Caller-ID-Name
+Value: Unavailable
+
+Key: Hunt-Caller-ID-Number
+Value: +916374375763
+
+Key: Hunt-Orig-Caller-ID-Name
+Value: Unavailable
+
+Key: Hunt-Orig-Caller-ID-Number
+Value: +916374375763
+
+Key: Hunt-Callee-ID-Name
+Value: Outbound Call
+
+Key: Hunt-Callee-ID-Number
+Value: 361002
+
+Key: Hunt-Network-Addr
+Value: 10.0.4.114
+
+Key: Hunt-ANI
+Value: +916374375763
+
+Key: Hunt-Destination-Number
+Value: 918939075990
+
+Key: Hunt-Unique-ID
+Value: a64ebe0e-7fb1-4e11-b431-1ad7d612093a
+
+Key: Hunt-Source
+Value: mod_sofia
+
+Key: Hunt-Transfer-Source
+Value: 1761566370:5ad44f15-a3e0-403f-9804-5914fc652f46:bl_xfer:918939075990/public/XML
+
+Key: Hunt-Context
+Value: public
+
+Key: Hunt-RDNIS
+Value: pulseInbound
+
+Key: Hunt-Channel-Name
+Value: sofia/internal/+916374375763@103.249.81.60
+
+Key: Hunt-Profile-Index
+Value: 3
+
+Key: Hunt-Profile-Created-Time
+Value: 1761566370049989
+
+Key: Hunt-Channel-Created-Time
+Value: 1761566360909989
+
+Key: Hunt-Channel-Answered-Time
+Value: 1761566361190011
+
+Key: Hunt-Channel-Progress-Time
+Value: 0
+
+Key: Hunt-Channel-Progress-Media-Time
+Value: 1761566361110013
+
+Key: Hunt-Channel-Hangup-Time
+Value: 0
+
+Key: Hunt-Channel-Transfer-Time
+Value: 0
+
+Key: Hunt-Channel-Resurrect-Time
+Value: 0
+
+Key: Hunt-Channel-Bridged-Time
+Value: 0
+
+Key: Hunt-Channel-Last-Hold
+Value: 0
+
+Key: Hunt-Channel-Hold-Accum
+Value: 0
+
+Key: Hunt-Screen-Bit
+Value: true
+
+Key: Hunt-Privacy-Hide-Name
+Value: false
+
+Key: Hunt-Privacy-Hide-Number
+Value: false
+

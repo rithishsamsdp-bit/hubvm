@@ -1,0 +1,79 @@
+from fastapi import FastAPI
+from fastapi.exceptions import RequestValidationError
+from config import settings
+from contextlib import asynccontextmanager
+from utils import lifespan
+from controllers import billing_controller
+from middlewares import cors_middleware, static_middleware, requestlog
+from db.context import asyncEngineFactory, killEngines, init_redis, close_redis
+from exception import RequestValidation
+import asyncio, logging
+
+@asynccontextmanager
+async def app_lifespan(app: FastAPI):
+
+    # -------- Startup --------
+    print("[APP] Startup triggered")
+
+    warmup_engine = asyncEngineFactory("onedb")
+    async with warmup_engine.begin() as conn:
+        await conn.run_sync(lambda _: None)
+
+    print("[APP] MySQL Engine warmed Up")
+
+    if settings.ENABLE_REDIS:
+        await init_redis()
+        print("[APP] Redis Engine warmed Up")
+    else:
+        print("[APP] Redis Disabled (Local Mode)")
+
+    # Start Emergency Orchestrator in background
+    print("[APP] Emergency Orchestrator started in background")
+
+    # Start Emergency Campaign Scheduler
+    from utils import background_schedule_task
+    background_schedule_task.start()
+    print("[APP] Emergency Campaign Scheduler started")
+
+    yield
+
+    # -------- Shutdown --------
+    print("[APP] Shutdown triggered")
+
+    # Shutdown Scheduler
+    from utils import background_schedule_task
+    await background_schedule_task.shutdown()
+    print("[APP] Emergency Campaign Scheduler stopped")
+
+    await killEngines()
+
+    print("[APP] MySQL Engine Killed")
+
+    if settings.ENABLE_REDIS:
+        await close_redis()
+        print("[APP] Redis Engine Killed")
+    else:
+        print("[APP] Redis Disabled (Local Mode)")
+
+# --- FastAPI app ---
+app = FastAPI(lifespan=app_lifespan)
+
+# Middleware setup start 
+cors_middleware.add(app)
+static_middleware.add(app)
+requestlog.add_request_logger(app)
+# Middleware setup end
+
+# Request Input Validation Exception Handler start
+app.add_exception_handler(RequestValidationError, RequestValidation.validation_exception_handler)
+# Request Input Validation Exception Handler end
+
+# Route setup start 
+app.include_router(billing_controller.router)
+# app.include_router(peer_controller.router)
+
+# Route setup end
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=3000, reload=True)

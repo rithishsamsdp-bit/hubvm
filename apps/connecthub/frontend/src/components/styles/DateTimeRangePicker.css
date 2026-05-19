@@ -1,0 +1,184 @@
+.datetime-picker {
+  position: relative;
+  display: inline-block;
+}
+.dtp-body {
+  display: flex;
+  gap: 16px;
+  align-items: stretch; /* ✅ calendar & time equal height */
+}
+
+.dtp-body > div:first-child {
+  display: flex;
+  flex-direction: column;
+}
+.dtp-input {
+  display: absolute;
+  width: auto;
+  min-width: 180px;
+  padding: 5px 12px;
+  border: 1px solid #a3a3a3;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  height: 40px;
+   z-index: 9999;
+}
+.dtp-input:hover {
+  border-color: #ff5200; 
+}
+.dtp-input:focus-within {
+  border-color: #ff5200; 
+  box-shadow: 0 0 0 2px rgba(255, 82, 0, 0.2); 
+}
+.dtp-input span {
+   font-family: var(--segoe);
+  font-size: 14px;
+  color: rgba(0,0,0,0.85);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dtp-popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+  background: #f4f6f8;
+  border: 1px solid #ffede4; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  z-index: 1000;
+  width: max-content;
+  padding: 16px;
+}
+
+.dtp-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.dtp-nav-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+   font-family: var(--segoe);
+  color: rgba(0,0,0,0.65);
+}
+.dtp-nav-button:hover {
+  color: #ff5200; 
+}
+.dtp-month-label {
+  margin: 0 12px;
+  font-weight: 500;
+   font-family: var(--segoe);
+  font-size: 14px;
+}
+
+.dtp-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 32px);
+  gap: 2px;
+  text-align: center;
+  font-size: 12px;
+   font-family: var(--segoe);
+}
+.dtp-calendar .weekday {
+  color: rgba(0,0,0,0.45);
+}
+.dtp-cell {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.dtp-cell:hover {
+  background: #ffede4; 
+}
+.dtp-cell.start,
+.dtp-cell.end {
+  background: #ff5200; 
+  color: #fff;
+}
+.dtp-cell.in-range {
+  background: #ffede4; 
+}
+
+.dtp-time-panel {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.dtp-time-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+   font-family: var(--segoe);
+  padding: 2px 0;
+  text-align: center;
+}
+
+.dtp-time-header div {
+  flex: 1;
+}
+.dtp-time-columns {
+  display: flex;
+  flex: 1;
+}
+
+.dtp-time-column {
+  flex: 1;
+  border: 1px solid #ffede4;
+  border-radius: 4px;
+  overflow-y: auto;
+  height: 200px; /* ✅ Fixed height for time columns */
+  max-height: 200px; /* ✅ Ensure consistent height */
+}
+
+.dtp-time-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dtp-time-column li {
+  padding: 12px 12px;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+   font-family: var(--segoe);
+  transition: background 0.2s;
+  border-radius: 4px;
+}
+.dtp-time-column::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+.dtp-time-column li:hover {
+  background: #ffede4;
+}
+
+.dtp-time-column li.selected {
+  background: #ff5200;
+  color: #fff;
+}
+
+.dtp-time-footer {
+  text-align: right;
+  margin-top: 8px;
+}
+.dtp-time-footer button {
+  background: #ff5200; 
+  color: #fff;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 12px;
+   font-family: var(--segoe);
+}

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: elevenlabs-proxy
+  namespace: connecthub
+spec:
+  selector:
+    app: elevenlabs-proxy
+  ports:
+    - protocol: TCP
+      port: 8050 # Exposed service port
+      targetPort: 8050 # Port on the container
+  type: ClusterIP # Change to NodePort if LoadBalancer isn't available

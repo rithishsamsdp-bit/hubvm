@@ -1,0 +1,27 @@
+networks:
+  gitea:
+    external: false
+
+services:
+  server:
+    image: gitea/gitea:latest
+    container_name: gitea
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - GITEA_APP_NAME= pulse
+      - GITEA_DOMAIN=gitea.pulse.in
+      - GITEA_SSH_DOMAIN=gitea.pulse.in
+      - GITEA_SSH_PORT=22
+      - GITEA_ROOT_URL=https://gitea.pulse.in/
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - ./gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "127.0.0.1:3333:3333"
+      - "127.0.0.1:222:22"
+      - "127.0.0.1:7778:3000"

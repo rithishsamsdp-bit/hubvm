@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-ivr-auth
+  labels:
+    app: fastapi-ivr-auth
+  namespace: connecthub
+spec:
+  selector:
+    app: fastapi-ivr-auth
+  ports:
+  - protocol: TCP
+    port: 8000 # Exposed service port
+    targetPort: 8000 # Port on the container
+  type: ClusterIP # Change to NodePort if LoadBalancer isn't available

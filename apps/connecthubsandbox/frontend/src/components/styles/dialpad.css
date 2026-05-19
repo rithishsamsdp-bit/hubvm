@@ -1,0 +1,707 @@
+.dialpad-container {
+  position: absolute;
+  z-index: 999999999;
+  left: 62px;
+  bottom: 100px;
+  width: 372px;
+  height: 560px;
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3);
+  padding: 20px 32px;
+  transition: all 0.3s ease;
+}
+.dial-name{
+   font-size: 12px;
+}
+.dialpad-header {
+  font-weight: 400;
+  font-size: var(--font-sm);
+  font-family: var(--segoe);
+  color: var(--color-grey-light);
+  display: flex;
+  align-items: center;
+}
+
+.dialpad-campaign-select {
+  font-size: var(--font-sm);
+  font-family: var(--segoe);
+  font-weight: 700;
+  color: var(--color-dim-gray);
+  margin-left: 5px;
+  letter-spacing: 0.15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.frame_icon {
+  width: 10px;
+  height: 5px;
+  margin-left: 4px;
+}
+
+.dialpad-numlabel {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  font-family: var(--segoe);
+  color: var(--color-midnight-blue);
+  line-height: 160%;
+  letter-spacing: 0.15px;
+  margin-bottom: 6px;
+}
+
+.dialpad-input-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccd3da;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-white);
+  position: relative;
+  height: 40px;
+  margin-bottom: 27px;
+}
+
+.dialpad-country-selector {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px 4px;
+}
+
+.country-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-white);
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  white-space: nowrap;
+}
+
+.dialpad-flag-icon {
+  margin-right: 8px;
+}
+
+.dialpad-country-name {
+  color: var(--color-steel-blue);
+  font-size: var(--font-sm);
+  font-weight: 400;
+  font-family: var(--lato);
+}
+
+.dialpad-country-code {
+  color: var(--color-deep-sea-blue);
+  font-size: var(--font-sm);
+  font-weight: 400;
+  font-family: var(--lato);
+  margin-left: 4px;
+}
+
+.dialpad-vertical-divider-image {
+  width: 20px;
+  height: 20px;
+}
+
+.dialpad-input-field {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-md);
+  font-weight: 400;
+  font-family: var(--lato);
+  color: var(--color-steel-blue);
+}
+
+.dialpad-contact-icon {
+  margin-right: 6px;
+}
+
+.dialpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 3px;
+  gap: 10px;
+}
+
+.dial-button {
+  height: 48px;
+  border: none;
+  background-color: var(--bg-gallery-gray);
+  border-radius: 100px;
+  font-size: 21px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--roboto);
+  color: #00201c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dailpad-number-letters {
+  font-size: 11px;
+  font-weight: 400;
+  font-family: var(--roboto);
+  color: var(--color-smoky-teal);
+  margin-left: 8px;
+  line-height: 16px;
+}
+
+.dialpad-footer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: auto;
+}
+
+.dialpad-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  width: 100%;
+}
+
+.dialpad-status {
+  margin-top: 8px;
+  font-size: 13px;
+  font-family: var(--segoe);
+  color: var(--color-grey-light);
+  text-align: center;
+}
+
+.dialpad-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+  width: 100%;
+}
+
+.dialpad-emty-icon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.dialpad-country-option {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.dialpad-country-option:hover {
+  background-color: var(--bg-smoke);
+}
+
+.dialpad-country-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dialpad-country-option:hover {
+  background-color: var(--bg-smoke);
+}
+
+.dialpad-country-option .flag-icon {
+  margin-right: 10px;
+  width: 20px;
+  height: 14px;
+}
+
+.dial-code {
+  margin-left: auto;
+  color: var(--color-slate-gray);
+}
+
+.country-search {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: var(--font-sm);
+  outline: none;
+}
+
+.campaign-dropdown {
+  position: absolute;
+  background-color: var(--bg-white);
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  z-index: 100;
+  padding: 5px 0;
+  width: auto;
+  min-width: 175px;
+}
+
+.campaign-option {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.campaign-option:hover {
+  background-color: var(--bg-smoke);
+}
+
+.contacts-search-wrapper {
+  padding: 6px 10px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.contacts-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background: var(--bg-white);
+  border: 1px solid #ddd;
+  border-radius: var(--radius-md);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-height: 222px;
+  max-height: 222px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-search-wrapper {
+  padding: 6px 10px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.contacts-panel {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background: var(--bg-white);
+  border: 1px solid #ddd;
+  border-radius: var(--radius-md);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-height: 222px;
+  max-height: 300px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-list {
+  overflow-y: auto;
+  max-height: 240px;
+  flex: 1;
+}
+
+.section-header {
+  color: #3c4458;
+  margin-left: 17px;
+}
+
+.contacts-section-header {
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--segoe);
+  color: #5F6368;
+  background-color: #F5F5F5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #E0E0E0;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.contact-option {
+  padding: 10px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #001E4F;
+  font-family: var(--segoe);
+  border-bottom: 1px solid #F0F2F5;
+  transition: background-color 0.2s ease;
+}
+
+.contact-option:hover {
+  background-color: #F0F2F5;
+}
+
+.contact-option-name {
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #001E4F;
+}
+
+.contact-option-phone {
+  font-size: 12px;
+  color: #5F6368;
+  font-weight: 400;
+}
+
+.agent-option {
+  background-color: #FAFAFA;
+}
+
+.agent-option:hover {
+  background-color: #E8F5E9;
+}
+
+.agent-option .contact-option-name {
+  color: #2E7D32;
+}
+
+.agent-option .contact-option-phone {
+  color: #558B2F;
+}
+
+.no-results {
+  padding: 20px 14px;
+  text-align: center;
+  color: #9E9E9E;
+  font-size: 14px;
+  font-family: var(--segoe);
+  font-style: italic;
+}
+
+.contacts-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.contacts-list::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+.contacts-list::-webkit-scrollbar-thumb {
+  background: #BDBDBD;
+  border-radius: 3px;
+}
+
+.contacts-list::-webkit-scrollbar-thumb:hover {
+  background: #9E9E9E;
+}
+
+.dialpad-status {
+  margin-top: 8px;
+  font-size: 13px;
+  font-family: var(--segoe);
+  color: #4a635e;
+  text-align: center;
+  font-weight: 500;
+}
+
+.dialpad-redial-button {
+  margin-left: auto;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.dialpad-redial-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dialpad-redial-button:not(:disabled) {
+  cursor: pointer;
+}
+
+.dialpad-redial-button:not(:disabled):hover {
+  background-color: rgba(47, 197, 34, 0.1);
+  border-radius: 4px;
+}
+
+@media (max-width: 1666px) {
+  .dialpad-container {
+    width: 263px;
+    height: 430px;
+    padding: 20px 15px; 
+  }
+
+  .dialpad-grid {
+    margin-bottom: 18px;
+  }
+
+  .dial-button {
+    margin-bottom: 2px;
+    height: 38px;
+    font-size: 18px;
+  }
+
+  .dailpad-number-letters {
+    margin-left: 4px;
+  }
+}/* Enhanced Campaign Dropdown Styles */
+
+.campaign-dropdown {
+  position: absolute;
+  background-color: var(--bg-white);
+  border: 1px solid #E0E5EB;
+  border-radius: 8px;
+  box-shadow: 0px 8px 24px rgba(0, 32, 73, 0.12);
+  white-space: nowrap;
+  z-index: 100;
+  padding: 8px 0;
+  width: auto;
+  min-width: 220px;
+  max-width: 320px;
+  margin-top: 4px;
+  animation: slideDown 0.2s ease-out;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.campaign-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.campaign-dropdown::-webkit-scrollbar-track {
+  background: #F5F5F5;
+}
+
+.campaign-dropdown::-webkit-scrollbar-thumb {
+  background: #BDBDBD;
+  border-radius: 3px;
+}
+
+.campaign-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #9E9E9E;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.campaign-dropdown-header {
+  padding: 10px 16px 8px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--segoe);
+  color: #5F6368;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #F0F2F5;
+  background-color: #FAFBFC;
+}
+
+.campaign-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.15s ease;
+  font-family: var(--segoe);
+  font-size: 14px;
+  color: #001E4F;
+  border-bottom: 1px solid #F5F7FA;
+  position: relative;
+}
+
+.campaign-option:last-child {
+  border-bottom: none;
+}
+
+.campaign-option:hover {
+  background-color: #FFEDE4;
+  padding-left: 20px;
+}
+
+.campaign-option.selected {
+  background-color: #FFEDE4;
+  color: #ff5200;
+  font-weight: 600;
+}
+
+.campaign-option.selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #ff5200;
+}
+
+.campaign-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.campaign-option-name {
+  font-weight: 500;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.campaign-option-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  font-family: var(--segoe);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 8px;
+}
+
+.campaign-option-badge.individual {
+  background-color: #FFF4E5;
+  color: #E37400;
+}
+
+.campaign-option-badge.active {
+  background-color: #E6F4EA;
+  color: #1E8E3E;
+}
+
+.campaign-option-icon {
+  margin-right: 10px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  background-color: #F0F2F5;
+  color: #5F6368;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.campaign-option:hover .campaign-option-icon {
+  background-color: #ff5200;
+  color: white;
+}
+
+.campaign-option.selected .campaign-option-icon {
+  background-color: #ff5200;
+  color: white;
+}
+
+.campaign-option-checkmark {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: #ff5200;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.campaign-option.selected .campaign-option-checkmark {
+  opacity: 1;
+}
+
+.campaign-dropdown-empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: #9AA0A6;
+  font-size: 13px;
+  font-family: var(--segoe);
+  font-style: italic;
+}
+
+.campaign-dropdown-divider {
+  height: 1px;
+  background-color: #E8EAED;
+  margin: 4px 0;
+}
+
+/* Enhanced Campaign Select Button */
+.dialpad-campaign-select {
+  font-size: var(--font-sm);
+  font-family: var(--segoe);
+  font-weight: 600;
+  color: #001E4F;
+  margin-left: 5px;
+  letter-spacing: 0.15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.dialpad-campaign-select:hover {
+  background-color: #F0F4FF;
+}
+
+.dialpad-campaign-select.active {
+  background-color: #E8F0FE;
+  color: #ff5200;
+}
+
+.campaign-select-icon {
+  transition: transform 0.2s ease;
+}
+
+.campaign-select-icon.open {
+  transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1666px) {
+  .campaign-dropdown {
+    min-width: 200px;
+    max-width: 280px;
+  }
+
+  .campaign-option {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .campaign-option-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+}

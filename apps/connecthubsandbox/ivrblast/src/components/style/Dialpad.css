@@ -1,0 +1,409 @@
+    /* Floating button styles */
+    .Dialpad_floating-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--primary_color);
+        color: var(--white_font_color);
+        border-radius: 50%;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        font-size: 24px;
+        z-index: 10;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Dialpad container (initially hidden) */
+    .Dialpad_container {
+        position: fixed;
+        bottom: -410px;
+        width: 220px;
+        height: 400px;
+        /* Initially hidden off-screen */
+        right: 15px;
+        background-color: var(--dialpad_background_color);
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2);
+        transition: bottom 0.5s ease-in-out;
+        z-index: 12;
+        overflow: hidden;
+        /* Smooth transition */
+    }
+
+    /* When dial pad is open, slide it up */
+    .Dialpad_container.open {
+        bottom: 0;
+        width: 220px;
+        height: 410px;
+        /* Slide up to the screen */
+    }
+
+    .Dialpad_container_1 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 0.5px solid var(--dialpad_border_color);
+        padding: 10px;
+
+    }
+
+    .Dialpad_avaliable {
+        color: green;
+        font-size: var(--very_very_small_font_size);
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dialpad_avaliable_icon {
+        font-size: 20px;
+        color: green;
+    }
+
+    .Dailpad_close_btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 20px;
+        color: var(--black_font_color);
+    }
+
+    .Dialpad_container_2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+    }
+
+
+    .dialpad-input {
+        border: none;
+        width: 100%;
+        font-size: 18px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        background-color: transparent;
+        border-bottom: 1px solid var(--white_color);
+        text-align: center;
+        color: var(--black_font_color);
+        font-family: var(--font-family);
+    }
+
+    .dialpad-input::placeholder {
+        color: var(--grey_font_color);
+        font-family: var(--font-family);
+    }
+
+    .dialpad-input:focus {
+        outline: none;
+    }
+
+    .dialpad-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 10px;
+        padding-top: 8px;
+    }
+
+    .dialpad-key {
+        padding: 25px;
+        font-size: 22px;
+        font-weight: 500;
+        width: 50px;
+        height: 50px;
+        background-color: transparent;
+        border: 1px solid var(--white_color);
+        color: var(--black_font_color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        text-align: center;
+        /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    }
+
+    .dialpad-key:hover {
+        background-color: white;
+        color: var(--primary_color);
+    }
+
+    .dialpad-key:active {
+        background-color: transparent;
+        color: var(--black_font_color);
+    }
+
+
+    .Dialpad_container_4 {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-top: 8px;
+        gap: 10px;
+    }
+
+    .dialpad-dummy-btn {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50%;
+        background: transparent;
+    }
+
+    .dialpad_call_btn {
+        border: none;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        /* background-color: #00c788; */
+        background-color: green;
+        cursor: pointer;
+    }
+
+    .dialpad_call_btn_icon {
+        font-size: 24px;
+        color: var(--white_font_color);
+    }
+
+    .call-button:active {
+        /* background-color: #009368; */
+        background-color: green;
+    }
+
+    .clear-button {
+        background: transparent;
+        width: 50px;
+        height: 50px;
+        border: 1px solid var(--white_color);
+        border-radius: 50%;
+        color: var(--black_font_color);
+        cursor: pointer;
+    }
+
+    .clear-button:hover {
+        background-color: white;
+        color: var(--primary_color);
+    }
+
+    .clear-button:active {
+        background: transparent;
+        color: var(--black_font_color);
+    }
+
+
+
+    /* calling css */
+
+
+    .Dialpad_calling_containers {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    .Dialpad_calling_container_1 {
+        width: 100%;
+        height: 210px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--dialpad_calling_background_color);
+        padding-top: 10px;
+        border-radius: 0px 0px 20px 20px;
+        padding-bottom: 50px;
+    }
+
+
+    .Dialpad_calling_caller_icon {
+        font-size: 60px;
+        color: var(--dialpad_calling_icon_color);
+        border: 3px solid var(--dialpad_calling_icon_border_color);
+        border-radius: 50%;
+    }
+
+    .Dialpad_calling_caller_name {
+        margin-top: 10px;
+        color: var(--white_font_color);
+        font-size: var(--very_small_font_size);
+        font-weight: 500;
+    }
+
+    .Dialpad_calling_caller_number {
+        color: var(--white_font_color);
+        font-size: var(--very_small_font_size);
+        font-weight: 300;
+        margin-top: 2px;
+    }
+
+    .Dialpad_calling_caller_mailid {
+        color: var(--white_font_color);
+        font-size: var(--very_very_small_font_size);
+        font-weight: 300;
+        margin-top: 2px;
+    }
+
+    .Dialpad_calling_caller_seconds {
+        color: var(--primary_color);
+        font-size: var(--very_very_small_font_size);
+        font-weight: 500;
+        margin-top: 2px;
+    }
+
+    .Dialpad_calling_container_2 {
+        width: 100%;
+    }
+
+    .Dialpad_calling_contollers_1 {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .Dailpad_calling_fun_btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        width: 65px;
+        height: 40px;
+        font-size: var(--very_very_very_small_font_size);
+        font-weight: 500;
+        color: var(--black_font_color);
+        cursor: pointer;
+        border-radius: 4px;
+        background-color: transparent;
+
+    }
+
+    .Dailpad_calling_fun_btn:hover {
+        background-color: rgba(0, 149, 134, 0.4);
+        border: 1px solid var(--primary_color);
+    }
+
+    .Dailpad_calling_fun_btn_active {
+        background-color: rgba(0, 149, 134, 0.4);
+        border: 1px solid var(--primary_color);
+    }
+
+    .Dailpad_calling_fun_btn_icon {
+        font-size: 16px;
+    }
+
+    .Dialpad_calling_contollers_2 {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .Dialpad_calling_container_3 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .Dialpad_calling_hangup_btn {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        justify-content: center;
+
+        height: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 15px;
+        border: none;
+        background-color: var(--red_color);
+        color: var(--white_font_color);
+        cursor: pointer;
+        font-size: var(--very_small_font_size);
+    }
+
+    .Dialpad_calling_hangup_btn_icon {
+        color: var(--white_font_color);
+        font-size: 20px;
+    }
+
+
+    .Dialpad_calling_transfer_model {
+        display: hidden;
+        background-color: var(--white_color);
+        position: absolute;
+        margin-top: 10px;
+        z-index: -99999999;
+        border-radius: 4px;
+    }
+
+    .Dialpad_calling_transfer_model_visible {
+        display: visible;
+        z-index: 99999999;
+    }
+
+    .Dialpad_calling_transfer_heading {
+        font-size: var(--very_very_small_font_size);
+        font-weight: 400;
+        margin-left: 8px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+        color: var(--black_font_color);
+    }
+
+
+    .Dialpad_calling_transfer_name_select {
+        font-size: var(--very_very_very_small_font_size);
+    }
+
+
+    .Dialpad_calling_transfer_container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+    .Dialpad_calling_transfer_call_details {
+        display: flex;
+        padding-left: 5px;
+        padding-right: 20px;
+        align-items: center;
+        gap: 10px;
+
+
+    }
+
+   
+    .Dailpad_calling_transfer_caller_status {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        
+       
+    }
+
+    .Dialpad_calling_transfer_user_icon {
+        font-size: 25px;
+        color: var(--white_font_color);
+    }

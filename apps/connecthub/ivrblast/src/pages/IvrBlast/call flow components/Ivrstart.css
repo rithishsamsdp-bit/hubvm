@@ -1,0 +1,35 @@
+.Ivr-Start-main-container{
+    width: 180px;
+    background-color: var(--white_color);
+    padding: 5px;
+    border: 3px solid var(--white_color);
+    border-radius: 5px;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .15s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.Ivr-Start-main-container:hover{
+    border: 3px solid rgba(0, 149, 134);
+}
+.Ivr-Start-heading-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* border-radius: 5px; */
+}
+
+
+
+.Ivr-start-heading {
+    color: var(--black_font_color);
+    font-weight: 400;
+    font-size: 18px;
+    
+}
+

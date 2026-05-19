@@ -1,0 +1,167 @@
+.admin_create_campaign {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.admin_create_campaign_content {
+    padding: 24px 32px;
+    height: calc(100% - 90px);
+    overflow-y: auto;
+}
+
+.admin_create_campaign_form_step {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-top: 24px;
+    background-color: var(--bg-white);
+    padding: 32px;
+}
+
+.admin_create_campaign_list_container_modal_form_group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    flex: 1;
+    margin-bottom: 16px;
+}
+
+
+.admin_create_campaign_list_form_footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
+    gap: 12px;
+}
+
+.admin_create_campaign_campaign_rules {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+    padding: 24px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.campaign_rules_section {
+    margin-bottom: 32px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #eef2f6;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.campaign_rules_section:last-child {
+    margin-bottom: 0;
+}
+
+.section_title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #e2e8f0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.section_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.label_with_info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: relative;
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.info_trigger {
+    cursor: help;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.info_trigger:hover {
+    color: #4f46e5;
+}
+
+/* Tooltip implementation */
+.info_trigger[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    width: 220px;
+    white-space: normal;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.info_trigger[data-tooltip]::after {
+    content: "";
+    position: absolute;
+    bottom: 110%;
+    left: 45%;
+    transform: translateX(20%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #1e293b transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.info_trigger:hover::before,
+.info_trigger:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 125%;
+}
+
+.admin_create_campaign_limits_row {
+    display: none; /* Replaced by section_grid */
+}
+
+.form_section_heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.form_subsection_heading {
+    display: none;
+}

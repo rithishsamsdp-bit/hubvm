@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-smsdlr
+  namespace: connecthub
+  labels:
+    app: fastapi-smsdlr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-smsdlr
+  template:
+    metadata:
+      labels:
+        app: fastapi-smsdlr
+    spec:
+      containers:
+      - name: fastapi-smsdlr
+        image: DOCKER_IMAGE
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: auth-token-secrets
+        - secretRef:
+            name: mysql-secrets
+        - secretRef:
+            name: s3-secrets
+
+

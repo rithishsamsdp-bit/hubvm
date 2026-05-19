@@ -1,0 +1,80 @@
+.Login_conatiner {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.Login_Pulse_logo {
+    position: absolute;
+    width: 150px;
+    top: 20px;
+    left: 20px;
+}
+
+.Login_form_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 50px; */
+}
+
+.Login_img_container {
+    width: 100%;
+    background-color: var(--primary_color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Login_img_text {
+    color: var(--grey_color);
+    font-size: var(--very_big_font_size);
+    font-weight: 700;
+}
+
+.Login_form {
+    width: 60%;
+    color: var(--black_color);
+}
+
+.Login_welcome_text {
+    width: 60%;
+    text-align: left;
+    color: var(--black_color);
+    font-size: var(--big_font_size);
+    font-weight: 700;
+}
+
+.Login_small_text {
+    width: 60%;
+    font-size: var(--very_small_font_size);
+    color: var(--black_color);
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.Login_small_text_grey {
+    width: 60%;
+    font-size: var(--very_small_font_size);
+    color: var(--grey_font_color);
+    font-weight: 400;
+    text-align: left;
+}
+
+.loading-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,15 @@
+.FlowEditor {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.FlowEditor_center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.react-flow__attribution a{
+    display: none !important;
+}

@@ -1,0 +1,36 @@
+.flow_voicemail_node {
+    width: 215px;
+    height: 62px;
+    background-color: #FFFFFF;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 16px;
+}
+.flow_voicemail_node_selected{
+    background-color: var(--bg-orange-light);
+    border: 1px solid var(--color-primary);
+}
+
+.flow_voicemail_nodes_icon {
+    width: 24px;
+    height: 24px;
+    background-color: var(--bg-orange-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flow_voicemail_center {
+    display: flex;
+    gap: 10px;
+}
+
+.flow_voicemail_heading {
+    font-family: var(--roboto);
+    font-weight: 400;
+    font-size: var(--font-sm);
+    line-height: 18px;
+    letter-spacing: 0.25%;
+}

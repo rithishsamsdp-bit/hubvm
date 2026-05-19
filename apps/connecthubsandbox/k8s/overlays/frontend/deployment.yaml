@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connecthub-frontend
+  namespace: connecthub
+  labels:
+    app: connecthub-frontend
+spec:
+  replicas: 1  # Number of replicas
+  selector:
+    matchLabels:
+      app: connecthub-frontend
+  template:
+    metadata:
+      labels:
+        app: connecthub-frontend
+    spec:
+      containers:
+        - name: connecthub-frontend
+          image: DOCKER_IMAGE  # Replace with your Docker image
+          ports:
+            - containerPort: 80  # Change to your app's port
+          env:  # Optional: Add environment variables
+            - name: NODE_ENV
+              value: "production"

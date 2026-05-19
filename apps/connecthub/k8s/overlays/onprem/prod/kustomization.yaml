@@ -1,0 +1,105 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - ../../../base
+
+# Override image tags per deployment. Update newTag via CI or ArgoCD Image Updater.
+images:
+  # Application services
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/agentconversation
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/ai
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/auth
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/billing
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/callfeatures
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/callrouting
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/callrouting-domestic
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/callrouting-domestic-midregister
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/callrouting-midregister
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/chat-backend
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/clicktocall
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/confrenceconsumer
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/elevenlabs-standalone
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/emergencyivr
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/frontend
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/freeswitch
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/hepipe
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/ivrblast
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/ivrblastapi
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/ivrblastauth
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/livemonitoring
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/longrunningtask
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/node-backend
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/queueconsumer
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/report
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/smsdlr
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/socketioagent
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/socketioserver
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/telephony
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/whatsapp
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/whatsappdlr
+    newTag: 20260512-da23117
+  # ESL FreeSWITCH instances
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/esl-fs1
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/esl-fs2
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/esl-fs3
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/esl-fs4
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/esl-fs5
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/esl-fs6
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/esl-fs7
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/esl-fs8
+    newTag: 20260512-da23117
+  # Predictive logic containers
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/predictivelogic
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/fastapi-monitor
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/fastapi-originate
+    newTag: 20260512-da23117
+  # Kafka custom images (confluentinc public images are not overridden here)
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/kafka-producer
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/kafka-consumer
+    newTag: 20260512-da23117
+  # Producerone
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/producerone-producer
+    newTag: 20260512-da23117
+  - name: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/producerone-consumer
+    newTag: 20260512-da23117

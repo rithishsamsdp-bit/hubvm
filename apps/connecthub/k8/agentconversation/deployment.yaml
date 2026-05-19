@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agentconversation
+  namespace: connecthub
+  labels:
+    app: agentconversation
+spec:
+  replicas: 5 # Number of pods to run
+  selector:
+    matchLabels:
+      app: agentconversation
+  template:
+    metadata:
+      labels:
+        app: agentconversation
+    spec:
+      containers:
+        - name: agentconversation
+          image: DOCKER_IMAGE # Replace with your Docker image name
+          ports:
+            - containerPort: 8000
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+          envFrom:
+            - secretRef:
+                name: auth-token-secrets
+            - secretRef:
+                name: mysql-secrets
+            - secretRef:
+                name: prod-secrets

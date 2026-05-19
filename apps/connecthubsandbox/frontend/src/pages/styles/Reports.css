@@ -1,0 +1,92 @@
+.reports {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.reports_container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: start;
+  justify-content: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  grid-template-columns: 0.4fr 0.3fr 0.3fr;
+  /* grid-template-rows: 285px ; */
+  padding: 33px;
+  gap: 24px;
+}
+
+.repots_sites_container_1 {
+  width: 100%;
+  min-height: 285px;
+  background-color: var(--white-bg);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.repots_sites_header_container {
+  width: 100%;
+  border-bottom: 1px solid #ededed;
+}
+
+.repots_sites_header {
+  font-weight: 700;
+  font-size: var(--font-lg);
+  color: var(--reports-heaing-color);
+  font-family: var(--lato);
+  padding-bottom: 10px;
+  margin-left: 10px;
+}
+
+.repots_sites_container_1_body_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.repots_sites_items_conainer {
+  width: 100%;
+  background-color: var(--reports-container-bg-color);
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  gap: 15px;
+  cursor: pointer;
+  color: var(--dark2-blue-font-color);
+}
+
+.repots_sites_items_conainer:hover {
+  color: var(--primary-font-color);
+  background-color: var(--orange-light-bg);
+}
+
+.repots_sites_items_text {
+  font-size: var(--font-sm);
+  font-weight: 500;
+  font-family: var(--lato);
+}
+
+.repots_sites_container_2,
+.repots_sites_container_3 {
+  width: 100%;
+  min-height: 285px;
+  background-color: var(--white-bg);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.repots_sites_container_2_body_container,
+.repots_sites_container_3_body_container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 10px;
+  gap: 10px;
+}

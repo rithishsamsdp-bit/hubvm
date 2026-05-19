@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: emergency-ivr-consumer
+  namespace: connecthub
+  labels:
+    app: emergency-ivr-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: emergency-ivr-consumer
+  template:
+    metadata:
+      labels:
+        app: emergency-ivr-consumer
+    spec:
+      containers:
+      - name: emergency-ivr-consumer
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/emergencyivr   # Replace with your Docker image name
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: kafka-details

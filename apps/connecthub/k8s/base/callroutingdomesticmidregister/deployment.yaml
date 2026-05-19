@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-callroutingdomesticmidregister
+  namespace: connecthub
+  labels:
+    app: fastapi-callroutingdomesticmidregister
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: fastapi-callroutingdomesticmidregister
+  template:
+    metadata:
+      labels:
+        app: fastapi-callroutingdomesticmidregister
+    spec:
+      containers:
+      - name: fastapi-callroutingdomesticmidregister
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/callrouting-domestic-midregister:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: auth-token-secrets
+        - secretRef:
+            name: mysql-secrets

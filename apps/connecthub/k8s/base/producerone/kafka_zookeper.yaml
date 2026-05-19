@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: procon-livemonitor
+  namespace: connecthub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: procon-livemonitor
+  template:
+    metadata:
+      labels:
+        app: procon-livemonitor
+    spec:
+      containers:
+        - name: producer-livemonitor
+          image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/producerone-producer:latest
+          env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+            - name: KAFKA_BROKER
+              value: "kafka-service:9092"
+          resources:
+              limits:
+                memory: "256Mi"
+                cpu: "500m"
+              requests:
+                memory: "128Mi"
+                cpu: "250m"
+
+        - name: consumer-livemonitor
+          image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/producerone-consumer:latest
+          env: []  # Ensure env is properly set
+          resources:
+              limits:
+                memory: "256Mi"
+                cpu: "500m"
+              requests:
+                memory: "128Mi"
+                cpu: "250m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: procon-livemonitor
+  namespace: connecthub
+spec:
+  selector:
+    app: procon-livemonitor
+  ports:
+    - name: producer  # Fixed typo
+      port: 3000
+      targetPort: 3000

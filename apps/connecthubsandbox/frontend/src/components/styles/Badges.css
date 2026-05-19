@@ -1,0 +1,25 @@
+.badge-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+.badge {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: var(--color-white);
+  font-weight: 400;
+  font-size: var(--font-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.extra-badge {
+  background-color: #d6dcff !important;
+  color: #3a57e8 !important;
+}

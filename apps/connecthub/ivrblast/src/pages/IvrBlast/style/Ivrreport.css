@@ -1,0 +1,155 @@
+.ivrReport_container {
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+
+.ivrReport_header {
+    width: 100%;
+    background-color: var(--navbar_background_color);
+    border-bottom: 0.5px solid var(--navbar_border_color);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 6px;
+}
+
+.ivrReport_heading {
+    font-size: var(--normal_font_size);
+    font-weight: 500;
+    color: var(--black_font_color);
+}
+
+
+.ivrReport_header_input {
+    display: flex;
+    gap: 10px;
+}
+
+.ivrReport_search_input {
+    width: 250px;
+}
+
+.add_ivrReport_btn_icon {
+    font-size: var(--btn_font_size);
+}
+
+.add_ivrReport_form {
+    height: auto;
+    /* padding: 10px; */
+}
+
+.ivrReport_filter_section {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.ivrReport_filters {
+    display: flex;
+    gap: 16px;
+}
+
+.ivrReport_edit_icon {
+    color: var(--secondary_color);
+    font-size: var(--btn_font_size);
+    margin-right: 5px;
+    margin-left: 20px;
+}
+
+.ivrReport_deletes_icon {
+    color: var(--red_color);
+    font-size: var(--btn_font_size);
+}
+
+.ivrReport_Run_Button{
+    left: 10px;
+}
+
+.ivrReport_tabel_view_container {
+    display: flex;
+    gap: 20px;
+
+}
+
+.ivrReport_tabel_first_container {
+    display: flex;
+
+}
+
+.ivrReport_tabel_user_icon {
+    font-size: 60px;
+    color: var(--navbar_user_icon_color);
+}
+
+.ivrReport_tabel_second_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ivrReport_username {
+    font-size: var(--small_font_size);
+    font-weight: 600;
+    color: var(--black_font_color);
+
+}
+
+.ivrReport_email {
+    font-size: var(--very_very_small_font_size);
+    color: var(--black_font_color);
+}
+
+.ivrReport_details_container {
+    display: flex;
+    font-size: var(--very_very_small_font_size);
+    gap: 70px;
+}
+
+.ivrCampaig_details_container_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ivrReport_details_container_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.ivrReport_details {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.create_ivrReport_list_layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create_ivrReport_list_layout_last {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.ivrReport_tabel_icons_answer_color{
+    font-size: 20px;
+    color: var(--call_green_color);
+}
+
+.ivrReport_tabel_icons_noanswer_color{
+    font-size: 20px;
+    color: var(--call_red_color);
+}
+
+.ivrReport_tabel_icons_busy_color{
+    font-size: 20px;
+    color: var(--call_busy_color);
+}

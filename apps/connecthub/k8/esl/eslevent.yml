@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-eslevent
+  namespace: connecthub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-eslevent
+  template:
+    metadata:
+      labels:
+        app: fastapi-eslevent
+    spec:
+      containers:
+        - name: fastapi-eslevent-fs1
+          image: IMAGEPRODUCERFS1
+          envFrom:
+            - secretRef:
+                name: esl-details-fs1
+        - name: fastapi-eslevent-fs2
+          image: IMAGEPRODUCERFS2
+          envFrom:
+            - secretRef:
+                name: esl-details-fs2
+        - name: fastapi-eslevent-fs3
+          image: IMAGEPRODUCERFS3
+          envFrom:
+            - secretRef:
+                name: esl-details-fs3
+        - name: fastapi-eslevent-fs4
+          image: IMAGEPRODUCERFS4
+          envFrom:
+            - secretRef:
+                name: esl-details-fs4
+        - name: fastapi-eslevent-fs5
+          image: IMAGEPRODUCERFS5
+          envFrom:
+            - secretRef:
+                name: esl-details-fs5
+        - name: fastapi-eslevent-fs6
+          image: IMAGEPRODUCERFS6
+          envFrom:
+            - secretRef:
+                name: esl-details-fs6
+        - name: fastapi-eslevent-fs7
+          image: IMAGEPRODUCERFS7
+          envFrom:
+            - secretRef:
+                name: esl-details-fs7
+        - name: fastapi-eslevent-fs8
+          image: IMAGEPRODUCERFS8
+          envFrom:
+            - secretRef:
+                name: esl-details-fs8
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-eslevent
+  namespace: connecthub
+spec:
+  selector:
+    app: fastapi-eslevent
+  ports:
+    - name: producer  # Fixed typo
+      port: 3000
+      targetPort: 3000

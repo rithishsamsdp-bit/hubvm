@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-ivr-auth
+  namespace: connecthub
+  labels:
+    app: fastapi-ivr-auth
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: fastapi-ivr-auth
+  template:
+    metadata:
+      labels:
+        app: fastapi-ivr-auth
+    spec:
+      containers:
+      - name: fastapi-ivr-auth
+        image: DOCKER_IMAGE  # Replace with your Docker image name
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"

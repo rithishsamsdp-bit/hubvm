@@ -1,0 +1,24 @@
+# Use Python 3.10 slim image as base
+FROM python:3.10-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy requirements.txt from the root directory to the container
+COPY kafka/requirements.txt /app/
+
+# Install dependencies
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
+
+# Now copy the entire app folder into the container
+COPY kafka/app /app
+
+# Set PYTHONPATH so modules can be found
+ENV PYTHONPATH=/app
+
+# Expose the FastAPI port
+EXPOSE 3000
+
+# Command to run the FastAPI app
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "3000"]

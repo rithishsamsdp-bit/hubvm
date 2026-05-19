@@ -1,0 +1,43 @@
+
+.admin_formbuildlist_container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 131px;
+}
+
+.admin_formbuildlist_table_search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 16px;
+  gap: 30px;
+}
+.admin_formbuildlist_modal_header_container {
+  width: 100%;
+  height: 83px;
+  padding: 24px 32px;
+  background-color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin_formbuildlist_modal_header {
+  font-family: var(--segoe);
+  font-weight: 700;
+  font-size: var(--font-xxxl);
+}
+  
+.admin_formbuilder_modal_footer {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.admin_formbuilder_action_container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}

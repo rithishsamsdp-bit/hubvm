@@ -1,0 +1,32 @@
+.Ivr-Hangup-main-container{
+    width: 180px;
+    background-color: var(--red_color);
+    padding: 5px;
+    border: 3px solid var(--white_color);
+    border-radius: 5px;
+    transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+    transition-duration: .15s;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Ivr-Hangup-main-container:hover{
+    border: 3px solid rgba(0, 149, 134);
+}
+.Ivr-Hangup-heading-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--white_font_color);
+    font-size: 20px;
+}
+
+.Ivr-Hangup-heading {
+    color: var(--white_font_color);
+    font-weight: 400;
+    font-size: 18px;
+}
+

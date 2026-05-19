@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-whatsappdlr
+  namespace: connecthub
+  labels:
+    app: fastapi-whatsappdlr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-whatsappdlr
+  template:
+    metadata:
+      labels:
+        app: fastapi-whatsappdlr
+    spec:
+      containers:
+      - name: fastapi-whatsappdlr
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/whatsappdlr:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: auth-token-secrets
+        - secretRef:
+            name: mysql-secrets
+        - secretRef:
+            name: s3-secrets
+
+

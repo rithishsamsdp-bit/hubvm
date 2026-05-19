@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: connecthub-ivrblast
+  namespace: connecthub
+  labels:
+    app: ivrblast
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: ivrblast
+  template:
+    metadata:
+      labels:
+        app: ivrblast
+    spec:
+      containers:
+      - name: ivrblast
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/ivrblastapi  # Replace with your Docker image name
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"

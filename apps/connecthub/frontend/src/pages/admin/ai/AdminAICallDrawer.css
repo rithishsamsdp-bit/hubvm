@@ -1,0 +1,256 @@
+.call_drawer_overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.4);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.call_drawer_container {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 650px;
+    max-width: 100%;
+    background: #fff;
+    box-shadow: -10px 0 20px rgba(0,0,0,0.1);
+    z-index: 1001;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.call_drawer_container.open {
+    transform: translateX(0);
+}
+
+.call_drawer_header {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.drawer_header_left h3 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: #0f172a;
+}
+.drawer_call_id {
+    font-family: monospace;
+    font-size: 12px;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.drawer_close_btn {
+    background: none; border: none; cursor: pointer;
+    padding: 8px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+.drawer_close_btn:hover { background: #f1f5f9; }
+
+/* Tabs */
+.call_drawer_tabs {
+    display: flex;
+    padding: 0 32px;
+    border-bottom: 1px solid #e2e8f0;
+    gap: 24px;
+}
+
+.drawer_tab {
+    padding: 16px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.drawer_tab:hover {
+    color: #1e293b;
+}
+
+.drawer_tab.active {
+    color: #0f172a;
+    border-bottom-color: #0f172a;
+}
+
+.drawer_loading {
+    padding: 100px; text-align: center; color: #94a3b8;
+}
+
+/* Base Body */
+.drawer_content_body {
+    flex: 1;
+    overflow-y: auto;
+    background: #f8fafc;
+}
+
+/* Overview Tab */
+.drawer_overview {
+    padding: 32px;
+}
+
+.overview_stat_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.overview_stat {
+    background: #fff;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    display: flex; flex-direction: column; gap: 8px;
+}
+.stat_label { font-size: 12px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+.stat_value { font-size: 16px; font-weight: 600; color: #0f172a; }
+
+.badge_completed { color: #16a34a; }
+.badge_interrupted { color: #ea580c; }
+.badge_failed { color: #dc2626; }
+
+.summary_box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    line-height: 1.6; color: #334155; font-size: 14px;
+}
+
+/* Transcription Tab Mimicking Screenshot */
+.drawer_transcription {
+    padding: 32px;
+}
+
+.chat_feed {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.chat_row {
+    display: flex;
+    align-items: flex-end; /* Align avatar and bubble to the bottom */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.row_user {
+    justify-content: flex-end;
+}
+.row_agent {
+    justify-content: flex-start;
+}
+
+.chat_avatar {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 8px;
+    position: absolute;
+    top: -24px; left: 0;
+}
+
+.avatar_circle {
+    width: 20px; height: 20px; background: #0ea5e9; color: white; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center; font-size: 9px; font-weight: bold;
+}
+.avatar_name { font-size: 12px; font-weight: 600; color: #0f172a; }
+
+.chat_bubble_container {
+    position: relative;
+    max-width: 80%;
+}
+
+.container_agent { margin-left: 0; margin-top: 24px;}
+.container_user { margin-right: 0;}
+
+.chat_bubble {
+    padding: 16px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+    min-width: 150px;
+}
+
+.bubble_agent {
+    background: #fff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px 12px 12px 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.bubble_user {
+    background: #f1f5f9;
+    color: #0f172a;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px 20px 4px 20px;
+}
+
+.bubble_time {
+    display: block;
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 6px;
+}
+.time_user { text-align: right; }
+.time_agent { text-align: left; }
+
+.audio_icon {
+    position: absolute;
+    right: -24px; top: 50%; transform: translateY(-50%);
+    cursor: pointer;
+}
+.row_user .audio_icon {
+    right: auto; left: -24px;
+}
+
+.bubble_metrics {
+    position: absolute;
+    bottom: -12px; /* Hang below the bubble */
+    display: flex; gap: 8px;
+}
+.container_agent .bubble_metrics { left: 16px; }
+.container_user .bubble_metrics { right: 16px; }
+
+.metric_pill {
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 10px;
+    color: #64748b;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.metric_pill b { color: #0f172a; }
+
+/* Client Data / API Calls */
+.drawer_client_data {
+    padding: 32px;
+    display: flex; flex-direction: column; gap: 16px;
+}
+
+.api_log_card {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;
+}
+.api_log_header {
+    padding: 12px 16px; border-bottom: 1px solid #e2e8f0; background: #f8fafc;
+    display: flex; align-items: center; gap: 12px; font-family: monospace; font-size: 12px;
+}
+.api_method { font-weight: bold; }
+.api_method.post { color: #0ea5e9; }
+.api_method.get { color: #16a34a; }
+.api_endpoint { color: #334155; flex: 1; }
+.api_status.success { color: #16a34a; font-weight: bold; }
+.api_status.error { color: #dc2626; font-weight: bold; }
+
+.api_log_body { padding: 16px; display: flex; flex-direction: column; gap: 16px; }
+.api_code_block strong { font-size: 12px; color: #64748b; margin-bottom: 8px; display: block; text-transform: uppercase; }
+.api_code_block pre { background: #1e293b; color: #e2e8f0; padding: 12px; border-radius: 8px; font-size: 12px; overflow-x: auto; margin: 0; }

@@ -1,0 +1,9 @@
+{% if prompt_email %}
+  <form method="get" action="/auth/set-email">
+      <label>Enter your email:</label>
+      <input type="text" name="email" required>
+      <button type="submit">Continue</button>
+  </form>
+{% else %}
+<h2>Welcome to our portal! Your account could not be found. Please contact support or try again.</h2>
+{% endif %}

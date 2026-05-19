@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: procon-livemonitor
+  namespace: connecthub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: procon-livemonitor
+  template:
+    metadata:
+      labels:
+        app: procon-livemonitor
+    spec:
+      containers:
+        - name: producer-livemonitor
+          image: IMAGEPRODUCER
+          env:
+            - name: PYTHONUNBUFFERED
+              value: "1"
+            - name: KAFKA_BROKER
+              value: "kafka-service:9092"
+
+        - name: consumer-livemonitor
+          image: IMAGE_CONSUMER
+          env: []  # Ensure env is properly set
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: procon-livemonitor
+  namespace: connecthub
+spec:
+  selector:
+    app: procon-livemonitor
+  ports:
+    - name: producer  # Fixed typo
+      port: 3000
+      targetPort: 3000

@@ -1,0 +1,263 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: connecthub-ingress
+  namespace: connecthub
+  annotations:
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/subnets: subnet-daf47ab2,subnet-02d243eaca7f8afa1
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-south-1:647096474516:certificate/27e58ec9-dcd1-4afe-a6a4-a103948c8698
+    alb.ingress.kubernetes.io/ssl-redirect: "443"
+    # Keep WebSocket connections alive up to 3600s (default 60s is too short for voice)
+    alb.ingress.kubernetes.io/target-group-attributes: stickiness.enabled=true,stickiness.lb_cookie.duration_seconds=86400,deregistration_delay.timeout_seconds=30
+    alb.ingress.kubernetes.io/connection-idle-timeout: "3600"
+spec:
+  ingressClassName: alb
+  rules:
+    - host: connecthub.pulsework360.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: connecthub-frontend
+                port:
+                  number: 80
+          - path: /delay
+            pathType: Prefix
+            backend:
+              service:
+                name: connecthub-frontend
+                port:
+                  number: 80
+          - path: /auth
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-service
+                port:
+                  number: 8000
+          - path: /agent
+            pathType: Prefix
+            backend:
+              service:
+                name: agentconversation
+                port:
+                  number: 8000
+          - path: /onboarding
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-service
+                port:
+                  number: 8000
+          - path: /telephony
+            pathType: Prefix
+            backend:
+              service:
+                name: connecthub-telephony
+                port:
+                  number: 8000
+          - path: /billing
+            pathType: Prefix
+            backend:
+              service:
+                name: connecthub-billing
+                port:
+                  number: 8000
+          - path: /ivrBlast
+            pathType: Prefix
+            backend:
+              service:
+                name: ivrblast-service
+                port:
+                  number: 8000
+          - path: /kafkaapi
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka-service
+                port:
+                  number: 3000
+          - path: /socketadmin
+            pathType: Prefix
+            backend:
+              service:
+                name: socketioserver
+                port:
+                  number: 8000
+          - path: /socketagent
+            pathType: Prefix
+            backend:
+              service:
+                name: socketioagent
+                port:
+                  number: 8000
+          - path: /report
+            pathType: Prefix
+            backend:
+              service:
+                name: report-service
+                port:
+                  number: 8000
+          - path: /producerone
+            pathType: Prefix
+            backend:
+              service:
+                name: procon-livemonitor
+                port:
+                  number: 3000
+          - path: /callrouting
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-callrouting
+                port:
+                  number: 8000
+          - path: /callroutingdomestic
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-callroutingdomestic
+                port:
+                  number: 8000
+          - path: /callroutingmidregisterdomestic
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-callroutingdomesticmidregister
+                port:
+                  number: 8000
+          - path: /callfeatures
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-callfeatures
+                port:
+                  number: 8000
+          - path: /whatsapp
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-whatsapp
+                port:
+                  number: 8000
+          - path: /clicktocall
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-clicktocall
+                port:
+                  number: 8000
+          - path: /node-backend
+            pathType: Prefix
+            backend:
+              service:
+                name: node-backend-service
+                port:
+                  number: 3000
+          - path: /callroutingmidregister
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-callroutingmidregister
+                port:
+                  number: 8000
+          - path: /emergency/ext
+            pathType: Prefix
+            backend:
+              service:
+                name: emergency-ivr-service
+                port:
+                  number: 8000
+          - path: /api/ai
+            pathType: Prefix
+            backend:
+              service:
+                name: ai
+                port:
+                  number: 8000
+          - path: /ws/voice
+            pathType: Prefix
+            backend:
+              service:
+                name: ai
+                port:
+                  number: 8000
+          - path: /ws/elevenlabs
+            pathType: Prefix
+            backend:
+              service:
+                name: elevenlabs-proxy
+                port:
+                  number: 8050
+          - path: /chat/users
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-chat
+                port:
+                  number: 5060
+          - path: /chat/rooms
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-chat
+                port:
+                  number: 5060
+          - path: /chat/messages
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-chat
+                port:
+                  number: 5060
+          - path: /chatsocket
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-chat
+                port:
+                  number: 5060
+
+    - host: connecthub-ivr.pulsework360.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: oldivrblast
+                port:
+                  number: 80
+          - path: /auth
+            pathType: Prefix
+            backend:
+              service:
+                name: fastapi-ivr-service
+                port:
+                  number: 8000
+          - path: /telephony
+            pathType: Prefix
+            backend:
+              service:
+                name: connecthub-telephony
+                port:
+                  number: 8000
+          - path: /ivrBlast
+            pathType: Prefix
+            backend:
+              service:
+                name: ivrblast-service
+                port:
+                  number: 8000
+          - path: /kafkaapi
+            pathType: Prefix
+            backend:
+              service:
+                name: kafka-service
+                port:
+                  number: 3000

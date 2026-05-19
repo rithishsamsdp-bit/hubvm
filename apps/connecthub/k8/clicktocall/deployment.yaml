@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-clicktocall
+  namespace: connecthub
+  labels:
+    app: fastapi-clicktocall
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: fastapi-clicktocall
+  template:
+    metadata:
+      labels:
+        app: fastapi-clicktocall
+    spec:
+      containers:
+      - name: fastapi-clicktocall
+        image: DOCKER_IMAGE  # Replace with your Docker image name
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: auth-token-secrets
+        - secretRef:
+            name: mysql-secrets
+

@@ -1,0 +1,724 @@
+/* Message Container Styles */
+.conversation_right_sidebar {
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    grid-template-rows: 64px auto 1fr;
+    background-color: var(--bg-white);
+    height: 100%;
+    overflow: hidden;
+}
+
+.conversation_right_header {
+    width: 100%;
+    height: 64px;
+    background-color: var(--bg-white);
+    border-bottom: 1px solid #d7e0e9;
+    padding: 10px 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.conversation_right_user_info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.conversation_right_user_avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conversation_right_user_avatar_text {
+    font-family: var(--lato);
+    font-weight: 700;
+    font-size: var(--font-sm);
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    color: var(--color-white);
+}
+
+.conversation_right_user_name {
+    white-space: nowrap;
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-md);
+    line-height: 124%;
+    letter-spacing: 0.25px;
+    color: var(--color-charcoal-black);
+}
+
+/* Tabs */
+.conversation_tabs {
+    display: flex;
+    gap: 24px;
+}
+
+.conversation_tab {
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+}
+
+.conversation_tab p {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-sm);
+    line-height: 157%;
+    letter-spacing: 0.1px;
+    color: var(--color-slate-blue);
+}
+
+.conversation_tab_active {
+    margin-bottom: -21px;
+    border-bottom: 3px solid var(--color-primary);
+}
+
+@media (max-width: 1114px) {
+    .conversation_tab_active {
+        margin-bottom: -14px;
+    }
+}
+
+/* Header Buttons */
+.conversation_header_button_container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: right;
+    padding-right: 13px;
+    border-bottom: 1px solid #d7e0e9;
+}
+
+/* Message Container */
+.conversation_right_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 100%;
+}
+
+.conversation_message_container {
+    padding: 0px 32px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    height: 100vh;
+    scroll-behavior: auto;
+    /* Disable smooth scrolling for instant positioning */
+}
+
+.conversation_message_container.with-calling-bar {
+    height: calc(100vh - 64px - 20px - 80px - 150px);
+}
+
+/* Message Date */
+.conversation_message_chat_date_container {
+    margin-bottom: 16px;
+    position: sticky;
+    top: 3px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conversation_message_chat_date {
+    padding: 2px 10px;
+    background-color: var(--color-primary);
+    text-align: center;
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-sm);
+    line-height: 24px;
+    letter-spacing: 0px;
+    color: var(--color-white);
+    border-radius: var(--radius-md);
+}
+
+/* Message Row */
+.conversation_message_row {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.conversation_message_row.self {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.conversation_message_avatar_container {
+    height: -webkit-fill-available;
+    display: flex;
+    align-items: self-end;
+}
+
+.conversation_message_avatar {
+    width: 25px;
+    height: 25px;
+    background-color: #d3d3d3;
+    color: var(--bg-white);
+    font-family: var(--roboto);
+    font-size: var(--font-sm);
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    margin-bottom: 0px;
+}
+
+.conversation_message_wrapper {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation_message_sender_details {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 4px;
+}
+
+.conversation_message_sender_name {
+    color: var(--color-slate-blue);
+    font-size: var(--font-xs);
+    margin-right: 8px;
+}
+
+.conversation_message_sender_time {
+    color: var(--color-pebble-gray);
+    font-size: var(--font-xs);
+}
+
+.conversation_message_card {
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    background-color: var(--bg-ghost-gray);
+    width: 100%;
+    max-width: 100%;
+    font-size: var(--font-sm);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Call Card Styles */
+.conversation_message_call_card_title {
+    background-color: var(--bg-white);
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: var(--radius-md);
+    font-family: var(--segoe);
+    font-weight: 400;
+    font-size: var(--font-xs);
+    color: var(--color-black);
+    margin-bottom: 15px;
+}
+
+.conversation_conversation_message_call_card_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-family: var(--segoe);
+    font-weight: 400;
+    font-size: var(--font-sm);
+    color: var(--color-black);
+}
+
+.conversation_message_call_card_title_icon {
+    border: 1px solid #cccccc;
+    background-color: var(--bg-white);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conversation_message_call_notes_container {
+    width: 100%;
+}
+
+.conversation_message_call_notes_heading {
+    font-family: var(--segoe);
+    font-weight: 400;
+    font-size: var(--font-xs);
+    line-height: 100%;
+    letter-spacing: 0px;
+    color: var(--color-jet-black);
+    margin-bottom: 4px;
+}
+
+/* WhatsApp File Card */
+.wa-file-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #dbdbdb;
+}
+
+.wa-file-icon {
+    font-size: 24px;
+}
+
+.wa-file-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.wa-file-name {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.wa-download-btn {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: var(--font-xs);
+}
+
+/* WhatsApp Media Card (Images/Videos) */
+.wa-media-card {
+    position: relative;
+    display: inline-block;
+    max-width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1px solid #dbdbdb;
+}
+
+.wa-media-image {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.wa-media-image:hover {
+    opacity: 0.9;
+}
+
+.wa-media-video {
+    width: 100%;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 8px;
+}
+
+.wa-media-download-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.wa-media-download-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* WhatsApp Template Message */
+.wa-template-message {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.wa-template-message .wa-template-header {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #111b21;
+}
+
+.wa-template-message .wa-template-body {
+    margin: 0;
+    font-size: 14px;
+    color: #111b21;
+}
+
+.wa-template-message .wa-template-footer {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #667781;
+    font-style: italic;
+}
+
+.wa-template-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.wa-template-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 12px;
+    background-color: rgba(0, 168, 132, 0.1);
+    color: #00a884;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.wa-template-btn:hover {
+    background-color: rgba(0, 168, 132, 0.2);
+}
+
+/* Media Preview Modal - WhatsApp Style */
+.media-preview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #0b141a;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+}
+
+.media-preview-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 16px;
+    background-color: #1f2c34;
+    min-height: 56px;
+}
+
+.media-preview-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.media-preview-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-preview-close-btn:hover svg {
+    color: #fff;
+}
+
+.media-preview-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.media-preview-action-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    text-decoration: none;
+}
+
+.media-preview-action-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.media-preview-title {
+    color: #e9edef;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.media-preview-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 20px;
+    overflow: auto;
+}
+
+.media-preview-image {
+    max-width: 100%;
+    max-height: calc(100vh - 140px);
+    object-fit: contain;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.media-preview-video {
+    max-width: 100%;
+    max-height: calc(100vh - 140px);
+    background-color: #000;
+}
+
+.media-preview-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding: 16px;
+    background-color: #1f2c34;
+    min-height: 60px;
+}
+
+.media-preview-action-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    background: none;
+    border: none;
+    color: #8696a0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.media-preview-action-btn:hover {
+    color: #00a884;
+}
+
+.media-preview-action-btn span {
+    font-size: 12px;
+}
+
+/* WhatsApp Message Status Icon */
+.wa-message-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.wa-message-text-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.wa-message-status-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Notes Container */
+.conversation_notes_container {
+    width: 100%;
+    height: calc(100vh - 150px);
+    padding: 24px 32px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+/* Modal Styles */
+.callback_remainder_modal_header_container {
+    background-color: var(--bg-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.callback_remainder_modal_header {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-lg);
+    color: var(--color-midnight-blue);
+}
+
+.callback_remainder_modal_form {
+    background-color: #f7f9fb;
+    padding: 16px;
+    border-radius: 8px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.callback_remainder_form_label {
+    font-family: var(--segoe);
+    font-weight: 600;
+    font-size: var(--font-sm);
+    color: var(--color-midnight-blue);
+    margin-bottom: 8px;
+}
+
+.callback_remainder_modal_footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Notes Modal */
+.notes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.note-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 4px 0;
+}
+
+.note-key {
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+}
+
+.note-value {
+    color: #555;
+    flex: 1;
+    text-align: right;
+}
+
+.no-data {
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+    padding: 12px 0;
+}
+
+/* Read More Link Styles */
+.read-more-link {
+    color: #0066cc;
+    cursor: pointer;
+    font-weight: 600;
+    display: inline;
+    margin-left: 4px;
+}
+
+.read-more-link:hover {
+    color: #004499;
+    text-decoration: underline;
+}
+
+/* Highlight Animation */
+@keyframes highlight-glow {
+    0% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: rgba(255, 235, 59, 0.3);
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+.highlighted_message .conversation_message_card {
+    animation: highlight-glow 1s ease-in-out infinite;
+    border: 2px solid #ffeb3b;
+    box-shadow: 0 0 15px rgba(255, 235, 59, 0.4);
+    z-index: 10;
+}
+
+.highlighted_message {
+    background: #FFEDE4 !important;
+    border-left: 6px solid #ff5200 !important;
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border-radius: 8px !important;
+    position: relative;
+    padding-left: 10px !important;
+}
+
+.highlighted_message .conversation_message_card {
+    animation: pulse-highlight 2s infinite ease-in-out;
+    border: 2px solid #ff520099 !important;
+    box-shadow: 0 8px 16px rgba(255, 82, 0, 0.2) !important;
+    transform: scale(1.02);
+}
+
+@keyframes pulse-highlight {
+    0% {
+        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(255, 82, 0, 0.2);
+    }
+
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 8px 25px rgba(255, 82, 0, 0.4);
+    }
+
+    100% {
+        transform: scale(1.02);
+        box-shadow: 0 8px 16px rgba(255, 82, 0, 0.2);
+    }
+}
+
+.wa-message-link {
+    color: #0066cc;
+    text-decoration: underline;
+    cursor: pointer;
+    word-break: break-all;
+}
+
+.wa-message-link:hover {
+    color: #004499;
+}

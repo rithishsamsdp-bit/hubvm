@@ -1,0 +1,126 @@
+        .superadmin_phonenumber {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+
+        .superadmin_phonenumber_navbar_button_container {
+          display: flex;
+          gap: 16px;
+        }
+
+        /* Navbar */
+        .superadmin_phonenumber_navbar {
+          width: 100%;
+          height: 131px;
+          background-color: var(--bg-white);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 16px 32px 0px 32px;
+          border-bottom: 1px solid #eee;
+        }
+
+        .superadmin_phonenumber_navbar_heading {
+          font-family: var(--segoe);
+          font-size: 24px;
+          font-weight: 700;
+          color: var(--color-midnight-blue);
+        }
+
+        .superadmin_phonenumber_navbar_breadcrumb {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 4px;
+          align-items: center;
+          gap: 4px;
+        }
+
+        .superadmin_phonenumber-breadcrumb-item {
+          font-family: var(--segoe);
+          font-weight: 700;
+          font-size: var(--font-sm);
+          color: var(--color-primary);
+          cursor: pointer;
+        }
+
+        .superadmin_phonenumber-breadcrumb-item.active {
+          font-weight: 400;
+          color: var(--color-slate-blue);
+          cursor: not-allowed;
+        }
+
+        /* Tabs */
+        .superadmin_phonenumber_tabs {
+          display: flex;
+          gap: 32px;
+          margin-top: 16px;
+        }
+
+        .superadmin_phonenumber_tab_item {
+          font-family: var(--segoe);
+          font-weight: 700;
+          font-size: var(--font-xs);
+          line-height: 157%;
+          letter-spacing: 0.1px;
+          text-align: center;
+          vertical-align: middle;
+          padding: 12px 0;
+          cursor: pointer;
+          position: relative;
+          color: var(--color-slate-blue);
+          transition: all 0.3s ease;
+        }
+
+
+        .superadmin_phonenumber_tab_item.active::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          height: 2px;
+          width: 100%;
+          background-color: var(--color-primary);
+        }
+
+        /* Tab content */
+        .superadmin_phonenumber_tab_content {
+          padding: 24px;
+          width: 100%;
+          height: calc(100% - 131px);
+          overflow-y: scroll;
+          overflow-x: hidden;
+
+        }
+
+        .superadmin_phonenumber_modal_header_container {
+          width: 100%;
+          height: 83px;
+          padding: 24px 32px;
+          background-color: var(--bg-white);
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        .superadmin_phonenumber_useredit_modal_header {
+          font-family: var(--segoe);
+          font-weight: 700;
+          font-size: var(--font-xxxl);
+        }
+
+        .superadmin_phonenumber_file_upload_container {
+          background: #fff;
+          margin: 20px;
+          padding: 40px;
+          font-family: var(--segoe);
+        }
+
+        .superadmin_phonenumber_batchupload_modal_footer {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          gap: 10px;
+          margin-bottom: 20px;
+          margin-right: 30px;
+        }

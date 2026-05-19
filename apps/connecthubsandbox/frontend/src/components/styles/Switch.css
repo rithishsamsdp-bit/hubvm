@@ -1,0 +1,112 @@
+/* sizing system */
+:root {
+  --sw-sm-h: 18px;  --sw-sm-w: 34px; --sw-sm-thumb: 14px;
+  --sw-md-h: 22px;  --sw-md-w: 42px; --sw-md-thumb: 18px;
+  --sw-lg-h: 28px;  --sw-lg-w: 54px; --sw-lg-thumb: 24px;
+
+  --sw-track-off: #cbd5e1;   /* slate-300 */
+  --sw-track-on:  #FF5200;   /* green-500 */
+  --sw-thumb:     #ffffff;
+  --sw-ring:      0 0 0 3px rgba(34, 197, 94, .35);
+  --sw-off-ring:  0 0 0 3px rgba(15, 23, 42, .2);
+}
+
+/* layout wrappers */
+.switch-field {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.switch-label {
+  font-size: 0.95rem;
+  color: #0f172a;
+  user-select: none;
+}
+
+.switch-hint {
+  font-size: 0.8rem;
+  color: #475569;
+  margin-left: calc(var(--sw-md-w) + .5rem);
+}
+
+/* core switch */
+.switch {
+  --h: var(--sw-md-h);
+  --w: var(--sw-md-w);
+  --thumb: var(--sw-md-thumb);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: var(--w);
+  height: var(--h);
+  cursor: pointer;
+  user-select: none;
+}
+
+.switch.sm { --h: var(--sw-sm-h); --w: var(--sw-sm-w); --thumb: var(--sw-sm-thumb); }
+.switch.md { --h: var(--sw-md-h); --w: var(--sw-md-w); --thumb: var(--sw-md-thumb); }
+.switch.lg { --h: var(--sw-lg-h); --w: var(--sw-lg-w); --thumb: var(--sw-lg-thumb); }
+
+/* hide the native checkbox but keep it accessible */
+.switch-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
+  cursor: inherit;
+}
+
+/* track */
+.switch-track {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: var(--sw-track-off);
+  border-radius: 999px;
+  transition: background-color 160ms ease, box-shadow 120ms ease;
+}
+
+/* thumb */
+.switch-thumb {
+  position: absolute;
+  top: 50%;
+  left: 2px;
+  width: var(--thumb);
+  height: var(--thumb);
+  background: var(--sw-thumb);
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  transition: transform 160ms ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,.2), 0 1px 1px rgba(0,0,0,.08);
+}
+
+/* checked state */
+.switch-input:checked + .switch-track {
+  background: var(--sw-track-on);
+}
+
+.switch-input:checked + .switch-track .switch-thumb {
+  transform: translate(calc(var(--w) - var(--thumb) - 4px), -50%);
+}
+
+/* focus styles */
+.switch-input:focus-visible + .switch-track {
+  box-shadow: var(--sw-ring);
+}
+
+.switch-input:not(:checked):focus-visible + .switch-track {
+  box-shadow: var(--sw-off-ring);
+}
+
+/* disabled */
+.switch.disabled,
+.switch-input:disabled + .switch-track {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

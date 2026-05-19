@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-queueconsumer
+  namespace: connecthub
+  labels:
+    app: queueconsumer
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: queueconsumer
+  template:
+    metadata:
+      labels:
+        app: queueconsumer
+    spec:
+      containers:
+      - name: queueconsumer
+        image: DOCKER_IMAGE  # Replace with your Docker image name
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+          - secretRef:
+              name: kafka-details
+          - secretRef:
+              name: mysql-details
+

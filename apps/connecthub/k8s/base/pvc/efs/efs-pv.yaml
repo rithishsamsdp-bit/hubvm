@@ -1,0 +1,17 @@
+# k8/efs/efs-pv.yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: shared-storage
+  namespace: connecthub
+spec:
+  capacity:
+    storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: efs-sc
+  csi:
+    driver: efs.csi.aws.com
+    volumeHandle: fs-0cdc7c160bc35606a  # <-- your EFS filesystem ID

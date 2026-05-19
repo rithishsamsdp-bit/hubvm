@@ -1,0 +1,14 @@
+.admin_users {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+}
+
+.admin_users_tab_content {
+        padding: 24px;
+        width: 100%;
+        height: calc(100% - 131px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+}

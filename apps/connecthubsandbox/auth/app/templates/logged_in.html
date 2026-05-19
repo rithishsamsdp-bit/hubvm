@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+<h2>✅ Successfully logged in via Azure AD!</h2>
+<p><strong>Email:</strong> {{ user_name }}</p>
+<p><strong>Attributes:</strong></p>
+<ul>
+  {% for key, value in attributes.items() %}
+    <li><strong>{{ key }}:</strong> {{ value }}</li>
+  {% endfor %}
+</ul>
+
+<form method="get" action="/auth/logout">
+    <input type="hidden" name="email" value="{{ user_name }}">
+    <button type="submit">🚪 Logout from Azure AD</button>
+</form>
+
+</body>
+</html>

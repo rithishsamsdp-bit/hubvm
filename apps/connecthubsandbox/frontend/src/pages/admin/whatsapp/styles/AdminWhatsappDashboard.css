@@ -1,0 +1,186 @@
+.admin_wa_dash_container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    background-color: var(--bg-ice-blue);
+}
+
+.admin_wa_dash_title {
+    font-size: var(--font-md);
+    font-weight: 700;
+    color: var(--color-midnight-blue);
+    margin-bottom: 0;
+}
+
+.admin_wa_dash_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.admin_wa_dash_filters {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.admin_wa_filter_item {
+    min-width: 150px;
+}
+
+.admin_wa_dash_title_small {
+    font-size: 16px;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 10px;
+    margin-bottom: -10px;
+}
+
+.admin_wa_dash_cards_row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.admin_wa_dash_card {
+    background-color: var(--bg-white);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin_wa_dash_card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.wa_dash_icon_box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f1f5f9;
+}
+
+.wa_dash_card_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.wa_dash_card_name {
+    font-size: var(--font-sm);
+    color: #64748b;
+    font-weight: 500;
+}
+
+.wa_dash_card_value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-midnight-blue);
+    line-height: 1.2;
+}
+
+.admin_wa_dash_title_group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.admin_wa_balance_widget {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 6px 16px 6px 8px;
+    /* Less padding left for the circle */
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
+}
+
+.admin_wa_balance_widget:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.2);
+    border-color: #7C3AED;
+}
+
+.balance_icon_circle {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(124, 58, 237, 0.3);
+    animation: pulse-glow 3s infinite;
+}
+
+.balance_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.1;
+}
+
+.balance_label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.balance_amount {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    font-family: 'Inter', sans-serif;
+    /* Ensure premium font rendering */
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 6px rgba(124, 58, 237, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+    }
+}
+
+.admin_wa_dash_charts_row {
+    display: flex;
+    gap: 20px;
+    min-height: 300px;
+    flex-wrap: wrap;
+}
+
+.admin_wa_chart_card {
+    background-color: var(--bg-white);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-md);
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    flex: 1;
+    min-width: 300px;
+}

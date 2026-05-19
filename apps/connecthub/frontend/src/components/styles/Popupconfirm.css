@@ -1,0 +1,92 @@
+/* Overlay that covers the entire screen */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999999999999;
+  background: rgba(2, 55, 93, 0.35);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Main popup container */
+.popup-container {
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);
+  min-width: 420px;
+  max-width: 500px;
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Header section */
+.popup-header {
+  width: 100%;
+  min-height: 60px;
+  padding: 20px 24px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.popup-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Body section */
+.popup-body {
+  padding: 24px;
+  background-color: #F1F5F9;
+}
+
+.popup-body p {
+  margin: 0;
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* Footer section with buttons */
+.popup-footer {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  background-color: #F1F5F9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .popup-container {
+    min-width: 90%;
+    margin: 0 16px;
+  }
+}

@@ -1,0 +1,207 @@
+/* Left Sidebar Styles */
+.conversation_left_sidebar {
+    height: 100%;
+    padding-bottom: 90px;
+    overflow: hidden;
+    scrollbar-width: 1px;
+    -ms-overflow-style: none;
+}
+
+.conversation_header {
+    top: 0;
+    background-color: var(--bg-ice-blue);
+    z-index: 10;
+    padding: 16px 0px 12px 35px;
+}
+
+.conversation_section_title {
+    color: var(--color-midnight-blue);
+    font-size: var(--font-xxxl);
+    font-weight: 700;
+    line-height: 124%;
+    letter-spacing: 0.25px;
+    margin-bottom: 5.5px;
+    font-family: var(--segoe);
+}
+
+.conversation-breadcrumb_text {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-sm);
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.conversation-breadcrumb-current {
+    font-weight: 700;
+    color: var(--color-slate-blue);
+    cursor: not-allowed;
+    font-size: 14px;
+}
+
+.conversation_top_line_breaker {
+    border: none;
+    height: 1px;
+    background-color: var(--bg-powder-blue);
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.conversation_left_scroll_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: auto;
+}
+
+.conversation_left_sidebar_inner {
+    padding: 0px 12px;
+}
+
+/* Conversation Card Styles */
+.conversation_left_card {
+    width: 100%;
+    background-color: var(--bg-white);
+    padding: 12px 16px 16px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    border-width: 1px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    margin-bottom: 16px;
+}
+
+.conversation_left_card:hover {
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-ivory-blush);
+}
+
+.conversation_left_card_active {
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-ivory-blush);
+}
+
+.conversation_left_card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.conversation_left_card_header1 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* Avatar Styles */
+.conversation_left_avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.participant-count-badge {
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    background-color: #127137;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: var(--segoe);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.conversation_left_avatar_text {
+    font-family: var(--lato);
+    font-weight: 700;
+    font-size: var(--font-sm);
+    letter-spacing: 0px;
+    text-transform: capitalize;
+    color: var(--color-white);
+}
+
+/* User Details */
+.conversation_left_user_details {
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation_left_user_name {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-md);
+    line-height: 124%;
+    letter-spacing: 0.25px;
+    color: var(--color-midnight-blue);
+}
+
+.conversation_left_user_number {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-xs);
+    line-height: 124%;
+    letter-spacing: 0.25px;
+    color: var(--color-granite);
+}
+
+.conversation_left_date_sm {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-xs);
+    letter-spacing: .25px;
+    color: #888888;
+}
+
+.conversation_left_time {
+    margin-bottom: 20px;
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-xs);
+    line-height: 124%;
+    letter-spacing: 0.25px;
+    color: var(--color-granite);
+}
+
+/* Status Row */
+.line_breaker {
+    border: none;
+    height: 1px;
+    background-color: var(--bg-misty-blue);
+    margin: 15px 0 12px 0;
+}
+
+.conversation_status_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.conversation_call_status_box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.conversation_call_status_text {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-xs);
+    line-height: 124%;
+    letter-spacing: 0.25px;
+    color: var(--color-granite);
+}

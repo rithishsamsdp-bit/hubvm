@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: socketioagent
+  namespace: connecthub
+  labels:
+    app: socketioagent
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: socketioagent
+  template:
+    metadata:
+      labels:
+        app: socketioagent
+    spec:
+      containers:
+      - name: socketioagent
+        image: DOCKER_IMAGE  # Replace with your Docker image name
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"

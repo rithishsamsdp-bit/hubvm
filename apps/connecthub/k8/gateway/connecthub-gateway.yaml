@@ -1,0 +1,29 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: connecthub-gateway
+  namespace: connecthub
+spec:
+  gatewayClassName: istio
+  listeners:
+    - name: http
+      hostname: '*.pulsework360.com'
+      port: 80
+      protocol: HTTP
+      allowedRoutes:
+        namespaces:
+          from: Same
+    - name: https
+      hostname: '*.pulsework360.com'
+      port: 443
+      protocol: HTTPS
+      tls:
+        mode: Terminate
+        certificateRefs:
+          - group: ""
+            kind: Secret
+            name: connecthub
+      allowedRoutes:
+        namespaces:
+          from: Same 
+    

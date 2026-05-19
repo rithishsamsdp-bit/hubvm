@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+websockets
+pydantic-settings
+sqlalchemy[asyncio]
+asyncmy
+pydantic
+python-multipart
+cryptography

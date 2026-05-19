@@ -1,0 +1,414 @@
+.agent_contactbook {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.agent_contactbook_container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 31px 30px 190px 30px;
+}
+
+
+.agent_contactbook_table_search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 30px;
+}
+
+.agent_contactbook_character_filter_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.agent_contactbook_character_filter_btn {
+  width: 42px;
+  height: 40px;
+  border: none;
+  border: 1px solid #e2e8f0;
+  background-color: var(--bg-white);
+  border-radius: var(--radius-xl);
+  font-family: var(--segoe);
+  font-size: var(--font-sm);
+  font-weight: 400;
+  line-height: 145%;
+  letter-spacing: 0.12px;
+  cursor: pointer;
+}
+
+.agent_contactbook_character_filter_btn:hover {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.agent_contactbook_character_filter_btn_active {
+  width: 42px;
+  height: 40px;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.agent_contactbook_filter_clear_button {
+  background-color: transparent;
+  border: none;
+  color: var(--color-royal-blue);
+  font-size: var(--font-sm);
+  font-weight: 400;
+  font-family: var(--segoe);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.agent_contactbook_action_conatiner {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.agent_contactbook_modal_header_container {
+  width: 100%;
+  height: 83px;
+  padding: 24px 32px;
+  background-color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.agent_contactbook_modal_header {
+  font-family: var(--segoe);
+  font-weight: 700;
+  font-size: var(--font-xxxl);
+}
+
+.agent_contactbook_modal_form {
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+}
+
+.agent_contactbook_modal_form_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.agent_contactbook_modal_form_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent_contactbook_modal_footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.agent_contactbook_modal_container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+}
+
+.agent_contactbook_view_modal_header {
+  padding: 14px;
+}
+
+.agent_contactbook_right_user_info {
+  display: flex;
+  align-items: center;
+}
+
+.agent_contactbook_right_user_avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  background-color: rgba(198, 150, 126, 0.64);
+}
+
+.agent_contactbook_right_user_avatar_text {
+  margin: 0;
+  font-size: 14px;
+}
+
+.agent_contactbook_right_user_name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.agent_contactbook_split_container {
+  display: flex;
+  flex: 1;
+}
+
+.agent_contactbook_conversation_message_container {
+  padding: 0px 32px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  flex: 1;
+  min-height: 0;
+}
+
+.agent_contactbook_conversation_message_chat_date_container {
+  margin-bottom: 16px;
+  position: sticky;
+  top: 3px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent_contactbook_conversation_message_chat_date {
+  padding: 2px 10px;
+  background-color: var(--color-primary);
+  text-align: center;
+  font-family: var(--segoe);
+  font-weight: 700;
+  font-size: var(--font-sm);
+  line-height: 24px;
+  letter-spacing: 0px;
+  color: var(--color-white);
+  border-radius: var(--radius-md);
+}
+
+.agent_contactbook_conversation_message_row {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.agent_contactbook_conversation_message_row.self {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.agent_contactbook_conversation_message_avatar_container {
+  height: -webkit-fill-available;
+  display: flex;
+  align-items: self-end;
+}
+
+.agent_contactbook_conversation_message_avatar {
+  width: 25px;
+  height: 25px;
+  background-color: #d3d3d3;
+  color: var(--bg-white);
+  font-family: var(--roboto);
+  font-size: var(--font-sm);
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  margin-bottom: 0px;
+}
+
+.agent_contactbook_conversation_message_wrapper {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent_contactbook_conversation_message_sender_details {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 4px;
+}
+
+.agent_contactbook_conversation_message_sender_name {
+  color: var(--color-slate-blue);
+  font-size: var(--font-xs);
+  margin-right: 8px;
+}
+
+.agent_contactbook_conversation_message_sender_time {
+  color: var(--color-pebble-gray);
+  font-size: var(--font-xs);
+}
+
+.agent_contactbook_conversation_message_card {
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  background-color: var(--bg-ghost-gray);
+  width: 100%;
+  font-size: var(--font-sm);
+}
+
+.agent_contactbook_conversation_message_call_card_title {
+  background-color: var(--bg-white);
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border: 1px solid #dbdbdb;
+  border-radius: var(--radius-md);
+  font-family: var(--segoe);
+  font-weight: 400;
+  font-size: var(--font-xs);
+  color: var(--color-black);
+  margin-bottom: 15px;
+}
+
+.agent_contactbook_conversation_conversation_message_call_card_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-family: var(--segoe);
+  font-weight: 400;
+  font-size: var(--font-sm);
+  color: var(--color-black);
+}
+
+.agent_contactbook_conversation_message_call_card_title_icon {
+  border: 1px solid #cccccc;
+  background-color: var(--bg-white);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agent_contactbook_conversation_message_call_notes_container {
+  width: 100%;
+}
+
+.agent_contactbook_conversation_message_call_notes_heading {
+  font-family: var(--segoe);
+  font-weight: 400;
+  font-size: var(--font-xs);
+  line-height: 100%;
+  letter-spacing: 0px;
+  color: var(--color-jet-black);
+  margin-bottom: 4px;
+}
+
+.agent_contactbook_personal_info_container {
+  flex: 0 0 300px;
+  padding: 20px;
+  border-left: 1px solid #e0e0e0;
+}
+
+.agent_contactbook_personal_info_form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.agent_contactbook_personal_info_field {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent_contactbook_personal_info_field label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Custom Communication Menu Styles (replaces library popover) */
+.custom-communication-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.custom-communication-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: #34404d;
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10000;
+  animation: communicationMenuIn 0.2s ease-out;
+}
+
+.custom-communication-menu::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 15px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent #34404d transparent;
+}
+
+@keyframes communicationMenuIn {
+  from { opacity: 0; transform: translateY(-5px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.communication-option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.communication-option:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.communication-option span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+}
+
+.communication-option svg {
+  flex-shrink: 0;
+}
+
+
+
+@media (min-width: 600px) {
+  .agent_contactbook_modal_form_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .agent_contactbook_modal_form_group.agent_contactbook_modal_form_group_address {
+    grid-column: 1 / -1;
+  }
+}

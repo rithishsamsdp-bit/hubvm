@@ -1,0 +1,348 @@
+.dtmf-container {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+}
+
+.dtmf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+  padding: 9px;
+}
+
+.dtmf-modal {
+  position: fixed !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  bottom: 60px !important;
+  top: auto !important;
+  width: 400px;
+  z-index: 20000 !important;
+}
+
+.dtmf-dial-button {
+  height: 38px;
+  border: none;
+  background-color: var(--bg-gallery-gray);
+  border-radius: 100px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  font-family: var(--roboto);
+  color: #00201c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dtmf-dial-button:hover {
+  background-color: #d0d0d0;
+}
+
+.dtmf-dial-button .dial-letters {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+/* ===== IMPROVED INPUT CONTAINER ===== */
+.dtmf-input-container {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* ===== IMPROVED INPUT STYLING ===== */
+.dtmf-input {
+  flex: 1;
+  padding: 11px 14px;
+  font-size: 15px;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 6px;
+  font-family: var(--segoe);
+  background: #ffffff;
+  color: #1e293b;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.dtmf-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  background: #ffffff;
+}
+
+.dtmf-input::placeholder {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.dtmf-input:hover:not(:focus) {
+  border-color: #94a3b8;
+}
+
+/* ===== IMPROVED SEND BUTTON ===== */
+.dtmf-send-button {
+  padding: 11px 24px;
+  background: linear-gradient(135deg, #ff5200 0%, #ff6b1a 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--segoe);
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 85px;
+  text-align: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(255, 82, 0, 0.2);
+  letter-spacing: 0.3px;
+}
+
+.dtmf-send-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e64a00 0%, #ff5200 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(255, 82, 0, 0.3);
+}
+
+.dtmf-send-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 82, 0, 0.2);
+}
+
+.dtmf-send-button:disabled {
+  background: #E2E8F0;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+/* ===== IMPROVED SCENARIO SECTION ===== */
+.dtmf-scenario-section {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1.5px solid #E2E8F0;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.dtmf-scenario-section:hover {
+  border-color: #ff5200;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+  transform: translateY(-2px);
+}
+
+.dtmf-scenario-section:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== IMPROVED HEADING (TITLE) ===== */
+.dtmf-scenario-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  font-family: var(--segoe);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dtmf-scenario-title::before {
+  content: '';
+  width: 4px;
+  height: 16px;
+  background: linear-gradient(135deg, #ff5200 0%, #ff6b1a 100%);
+  border-radius: 2px;
+  display: inline-block;
+}
+
+/* ===== IMPROVED EXAMPLE NOTE ===== */
+.dtmf-scenario-example {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 14px;
+  font-style: normal;
+  font-family: 'Courier New', 'Monaco', monospace;
+  background: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #3b82f6;
+  display: block;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* ===== KEYBOARD DTMF MODAL ===== */
+.keyboard-dtmf-modal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 20px 25px -5px rgba(0, 0, 0, 0.08),
+    0 30px 40px -10px rgba(0, 0, 0, 0.06);
+}
+
+.keyboard-dtmf-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1.5px solid #e2e8f0;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+}
+
+.keyboard-dtmf-title {
+  font-family: var(--segoe);
+  font-weight: 700;
+  font-size: 19px;
+  color: #0f172a;
+  letter-spacing: -0.02em;
+}
+
+.keyboard-dtmf-content {
+  padding: 10px;
+  overflow-y: auto;
+  flex: 1;
+  background-color: #F1F5F9;
+}
+
+/* Smooth scrollbar */
+.keyboard-dtmf-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.keyboard-dtmf-content::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 3px;
+}
+
+.keyboard-dtmf-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.keyboard-dtmf-content::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Custom overlay for DTMF modal */
+.dtmf-modal-overlay {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 10001 !important;
+  background: #02375D59;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.dtmf-modal.show {
+  animation: slideInUp 0.3s ease-out;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 480px) {
+  .dtmf-modal {
+    width: calc(100% - 32px);
+    left: 16px !important;
+    transform: none !important;
+  }
+  
+  .keyboard-dtmf-header {
+    padding: 14px 16px;
+  }
+  
+  .keyboard-dtmf-title {
+    font-size: 17px;
+  }
+  
+  .keyboard-dtmf-content {
+    padding: 16px;
+  }
+  
+  .dtmf-scenario-section {
+    padding: 14px;
+  }
+  
+  .dtmf-scenario-title {
+    font-size: 14px;
+  }
+  
+  .dtmf-input {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  
+  .dtmf-send-button {
+    font-size: 14px;
+    padding: 10px 18px;
+    min-width: 75px;
+  }
+}
+
+/* ===== FOCUS STATES FOR ACCESSIBILITY ===== */
+.dtmf-send-button:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+.dtmf-input:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ===== LOADING STATE (OPTIONAL) ===== */
+.dtmf-send-button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.dtmf-send-button.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

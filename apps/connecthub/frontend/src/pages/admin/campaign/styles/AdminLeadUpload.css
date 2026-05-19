@@ -1,0 +1,111 @@
+.upload_container {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.upload_header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: #334155;
+    text-align: center;
+}
+
+.form_group {
+    margin-bottom: 24px;
+}
+
+.form_label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+/* Drag and Drop Styles */
+.file_upload_area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f8fafc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+}
+
+.file_upload_area:hover,
+.file_upload_area.dragging {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+
+/* Specific icon color for the upload icon if needed */
+.file_upload_icon_wrapper svg {
+    color: #de350b;
+    /* Example orange/red from image */
+}
+
+.file_upload_text {
+    font-size: 16px;
+    color: #334155;
+}
+
+.file_upload_link {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.file_input_hidden {
+    display: none;
+}
+
+.selected_file_name {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #16a34a;
+    font-weight: 500;
+}
+
+.download_link_container {
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.download_link {
+    color: #2563eb;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.download_link:hover {
+    text-decoration: underline;
+}
+
+.upload_actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.upload_actions button {
+    width: 100%;
+}

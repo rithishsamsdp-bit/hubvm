@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-livemonitoring
+  namespace: connecthub
+  labels:
+    app: livemonitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: livemonitoring
+  template:
+    metadata:
+      labels:
+        app: livemonitoring
+    spec:
+      containers:
+      - name: livemonitoring
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/livemonitoring  # Replace with your Docker image name
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+          - secretRef:
+              name: kafka-details
+          - secretRef:
+              name: mysql-details
+          - secretRef:
+              name: mongo-details

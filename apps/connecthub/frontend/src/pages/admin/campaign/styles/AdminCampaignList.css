@@ -1,0 +1,19 @@
+.admin_campaign_list_container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 131px;
+}
+
+.admin_campaign_list_table_search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 16px;
+    gap: 30px;
+}
+.admin_campaign_list_actions_btn_container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

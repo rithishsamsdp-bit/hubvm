@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Configure SAML</title>
+</head>
+<body>
+    <h2>Insert SAML Configuration</h2>
+<form method="post" enctype="multipart/form-data">
+    <label>Domain:</label><br>
+    <input type="text" name="domain"><br><br>
+
+    <label>Azure Entity ID:</label><br>
+    <input type="text" name="entity_id"><br><br>
+
+    <label>SSO Login URL:</label><br>
+    <input type="text" name="sso_url"><br><br>
+
+    <label>Certificate (Base64) (.cer file):</label><br>y
+    <input type="file" name="x509cert_file" accept=".cer"><br><br>
+
+    <button type="submit">Save Configuration</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+/* SidePanel.css */
+
+.flow-side-panel {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background: var(--bg-white);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.flow-side-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #EBEBEB;
+  height: 64px;
+  padding: 0px 20px;
+}
+
+.flow-side-panel-header p{
+font-family: var(--roboto);
+font-weight: 400;
+font-size: var(--font-xl);
+line-height: 24px;
+letter-spacing: 0.25%;
+color: var(--color-black);
+}
+
+
+
+.side-panel-body {
+  overflow-y: auto;
+  flex: 1;
+}
+
+
+
+
+

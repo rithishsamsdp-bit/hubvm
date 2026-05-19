@@ -1,0 +1,154 @@
+.admin_users_list_container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 131px;
+}
+
+.admin_users_list_container_table_search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 16px;
+  gap: 30px;
+}
+
+
+.admin_users_list_filter_clear_button {
+  background-color: transparent;
+  border: none;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--sengo-ui-font-family);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.admin_users_useredit_modal_header_container {
+  width: 100%;
+  height: 83px;
+  padding: 24px 32px;
+  background-color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin_users_useredit_modal_header {
+  font-family: var(--segoe);
+  font-weight: 700;
+  font-size: var(--font-xxxl);
+}
+
+.admin_users_useredit_modal_form {
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+}
+
+.admin_users_useredit_modal_form_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.admin_users_usereditform_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.admin_users_modal_footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.admin_users_file_upload_container {
+  background: #fff;
+  margin: 20px;
+  padding: 40px;
+  font-family: var(--segoe);
+}
+
+.admin_users_batch_file_upload {
+  height: auto;
+  border: 2px dashed #d0d5dd;
+  background-color: #f4f9fe;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: border-color 0.3s ease;
+  padding: 50px;
+  margin-bottom: 20px;
+}
+
+.admin_users_creation_template_btn {
+  height: 40px;
+  border: 1px solid #a3a3a3;
+  font-family: var(--sengo-ui-font-family);
+  font-weight: 700;
+  font-size: 14px;
+  color: #334155;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.admin_users_batchupload_modal_footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+}
+
+
+/* customDropdown */
+.admin_users_dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.admin_users_dropdown_menu {
+  position: absolute;
+  top: 103%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.admin_users_dropdown_item {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #d0d5dd;
+}
+
+.admin_users_dropdown_item:hover {
+  background-color: #f5f5f5;
+}
+
+.admin_users_tabel_action_container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}

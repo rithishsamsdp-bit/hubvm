@@ -1,0 +1,54 @@
+.admin_phonenumber {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tabs Section (Inline with navbar_2) */
+.navbar_2_tabs {
+    display: flex;
+    gap: 32px;
+}
+
+.navbar_2_tab_item {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-xs);
+    line-height: 157%;
+    letter-spacing: .1px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 0;
+    cursor: pointer;
+    position: relative;
+    color: var(--color-slate-blue);
+    transition: all .3s ease;
+}
+
+.navbar_2_tab_item:hover {
+    color: #ff5200;
+}
+
+.navbar_2_tab_item.active {
+    color: #ff5200;
+}
+
+.navbar_2_tab_item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #ff5200;
+    border-radius: 10px 10px 0 0;
+}
+
+.admin_phonenumber_tab_content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

@@ -1,0 +1,152 @@
+.login {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-card {
+  width: 100%;
+  max-width: 586px;
+  height: 541px;
+  background-color: #ffffff;
+  padding: 60px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: stretch; */
+}
+
+.loginlogo {
+  width: 134px;
+  height: 89px;
+  align-self: center;
+  margin-bottom: 12px;
+}
+
+.logincardheading {
+  font-family: var(--Inter-font-family);
+  font-size: var(--login-heading-font-size);
+  color: var(--login-heading-font-color);
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 39px;
+}
+.login-input-group {
+  display: flex;
+  flex-direction: column;
+}
+.login-input-label {
+  font-family: var(--sengo-ui-font-family);
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #000000de;
+}
+.login-email-input-group {
+  margin-bottom: 24px;
+}
+.login-email-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #334155;
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 40px;
+  color: #0f172a;
+  font-family: var(--sengo-ui-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.login-email-input:focus {
+  border-color: #ff5c00;
+  outline: none;
+}
+
+.login-email-error {
+  display: flex;
+  align-items: center;
+}
+
+.login-email-error-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.login-email-error-text {
+  color: #b91c1c;
+  font-size: 14px;
+  margin-left: 8px;
+  font-family: var(--sengo-ui-font-family);
+  font-weight: 700;
+}
+
+.login-pass-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #334155;
+  border-radius: 5px;
+  background-color: #ffffff;
+  height: 40px;
+  color: #0f172a;
+  font-family: var(--sengo-ui-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 6px;
+}
+.login-pass-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+.login-pass-input-group {
+  margin-bottom: 12px;
+}
+
+.login-forgot {
+  text-align: right;
+  margin-bottom: 24px;
+}
+
+.login-forgot-link {
+  color: #1a56ee;
+  text-decoration: underline;
+  font-family: var(--sengo-ui-font-family);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+.login-btn {
+  height: 40px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--sengo-ui-font-family);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+}
+
+
+.password-wrapper {
+  position: relative;
+}
+.eye_icon {
+  position: absolute;
+  top: 44%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+}
+
+.login-card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+

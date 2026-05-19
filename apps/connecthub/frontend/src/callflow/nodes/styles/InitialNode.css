@@ -1,0 +1,18 @@
+.flow_initial_node{
+ width: 156px;
+ height: 42px;
+ background-color: var(--bg-charcoal-deep);   
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ border-radius:40px;
+}
+
+.flow_initial_node_label{
+    color: var(--color-white);
+    font-size: var(--font-sm);
+    font-weight: 500;
+    font-family: var(--roboto);
+    line-height: 18px;
+    letter-spacing: 0.25%;
+}

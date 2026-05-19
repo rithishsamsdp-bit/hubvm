@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-predective
+  namespace: connecthub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-predective
+  template:
+    metadata:
+      labels:
+        app: fastapi-predective
+    spec:
+      containers:
+        - name: fastapi-logic
+          image: IMAGELOGIC
+          envFrom:
+            - secretRef:
+                name: kafka-details
+            - secretRef:
+                name: mysql-details
+            - secretRef:
+                name: mongo-details
+            - secretRef:
+                name: redis-details
+            - secretRef:
+                name: predective-freeswitch-details
+        - name: fastapi-monitor
+          image: IMAGEMONITOR
+          envFrom:
+            - secretRef:
+                name: kafka-details
+            - secretRef:
+                name: mysql-details
+            - secretRef:
+                name: mongo-details
+            - secretRef:
+                name: redis-details
+            - secretRef:
+                name: predective-freeswitch-details
+        - name: fastapi-originate
+          image: IMAGEORIGINATE
+          envFrom:
+            - secretRef:
+                name: kafka-details
+            - secretRef:
+                name: mysql-details
+            - secretRef:
+                name: mongo-details
+            - secretRef:
+                name: redis-details
+            - secretRef:
+                name: predective-freeswitch-details
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-predective
+  namespace: connecthub
+spec:
+  selector:
+    app: fastapi-predective
+  ports:
+    - name: producer
+      port: 3000
+      targetPort: 3000

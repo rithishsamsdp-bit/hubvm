@@ -1,0 +1,98 @@
+.superadmin_onboard_creation {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.superadmin_onboard_content {
+  padding: 24px;
+  width: 100%;
+  height: calc(100% - 90px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.superadmin_onboard_container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 131px;
+}
+
+.superadmin_onboard_table_search {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 16px;
+  gap: 30px;
+}
+
+.superadmin_onboard_modal_header_container {
+  width: 100%;
+  height: 83px;
+  padding: 24px 32px;
+  background-color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.superadmin_onboard_modal_header {
+  font-family: var(--segoe);
+  font-weight: 700;
+  font-size: var(--font-xxxl);
+}
+
+.superadmin_onboard_modal_form {
+  width: 100%;
+  height: 450px;
+  padding: 32px;
+  overflow-y: auto;
+}
+
+.superadmin_onboard_modal_form_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.superadmin_onboard_modal_form_group {
+  display: flex;
+  flex-direction: column;
+}
+
+.superadmin_onboard_action_container {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.superadmin_onboard_modal_form_footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.superadmin_onboard_users_section {
+  width: 100%;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.superadmin_onboard_users_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.superadmin_onboard_users_title {
+  font-family: var(--segoe);
+  font-weight: 600;
+  font-size: var(--font-xl);
+  color: var(--color-midnight-blue);
+}

@@ -1,0 +1,147 @@
+/* Compact Country Code Dropdown Styles */
+.dialpad-country-select.compact .dialpad-country-trigger {
+  border: none;
+  border-radius: 0;
+  padding: 12px 8px 12px 16px;
+  background: transparent;
+  min-width: 100px;
+}
+
+.dialpad-country-select.compact .dialpad-country-trigger:hover {
+  background: #f9fafb;
+}
+
+.dialpad-country-select.compact .dialpad-country-trigger-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dialpad-country-select.compact .dialpad-country-trigger-text {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.dialpad-country-select.compact .flag-icon {
+  width: 20px;
+  height: 15px;
+  border-radius: 2px;
+}
+
+.dialpad-country-select {
+  position: relative;
+  width: 100%;
+}
+
+.dialpad-country-select.is-disabled .dialpad-country-trigger {
+  background: #f9fafb;
+  border-color: #e5e7eb;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.dialpad-country-trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dialpad-country-trigger:hover {
+  border-color: #9ca3af;
+}
+
+.dialpad-country-trigger:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dialpad-country-trigger.has-error {
+  border-color: #ef4444;
+}
+
+.dialpad-country-trigger-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+}
+
+.dialpad-country-popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  margin-top: 4px;
+  max-height: 250px;
+  overflow: hidden;
+}
+
+.dialpad-country-search {
+  padding: 8px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.dialpad-country-search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.dialpad-country-search-input:focus {
+  border-color: #ff5200;
+}
+
+.dialpad-country-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dialpad-country-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.dialpad-country-option:hover,
+.dialpad-country-option.is-active {
+  background: #f3f4f6;
+}
+
+.dialpad-country-option .country-name {
+  flex: 1;
+  font-size: 14px;
+  color: #374151;
+}
+
+.dialpad-country-option .dial-code {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.dialpad-country-empty {
+  padding: 16px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+}

@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-billing
+  namespace: connecthub
+  labels:
+    app: fastapi-billing
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-billing
+  template:
+    metadata:
+      labels:
+        app: fastapi-billing
+    spec:
+      containers:
+      - name: fastapi-billing
+        image: DOCKER_IMAGE
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        env:
+        - name: APP_FOLDER_NAME
+          value: "queue_app1"   # Change per deployment if needed
+        volumeMounts:
+        - name: efs-storage
+          mountPath: /opt/freeswitch/storage
+        envFrom:
+        - secretRef:
+            name: auth-token-secrets
+        - secretRef:
+            name: mysql-secrets
+        - secretRef:
+            name: freeswitch-secrets
+        - secretRef:
+            name: s3-secrets
+      volumes:
+      - name: efs-storage
+        persistentVolumeClaim:
+          claimName: efs-pvc

@@ -1,0 +1,72 @@
+name: chat-backend Workflow
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - 'chat-backend/**'
+      - 'k8/chat-backend/**'
+      - 'docker/chat-backend/**'
+      - '.github/workflows/chat-backend.yml'
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - 'chat-backend/**'
+      - 'k8/chat-backend/**'
+      - 'docker/chat-backend/**'
+      - '.github/workflows/chat-backend.yml'
+
+env:
+  AWS_REGION: ap-south-1
+  ECR_REPOSITORY: connecthub_chat
+  ECS_CLUSTER: connecthub
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Ensure ECR Repository Exists
+      run: |
+        aws ecr describe-repositories --repository-names ${{ env.ECR_REPOSITORY }} --region ${{ env.AWS_REGION }} || aws ecr create-repository --repository-name ${{ env.ECR_REPOSITORY }} --region ${{ env.AWS_REGION }}
+
+    - name: Build, tag, and push image to Amazon ECR
+      id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f docker/chat-backend/Dockerfile .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+    - name: Update kube config
+      run: aws eks update-kubeconfig --name $ECS_CLUSTER --region $AWS_REGION
+
+    - name: Deploy to EKS
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        sed -i.bak "s|DOCKER_IMAGE_CHAT|$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" k8/chat-backend/deployment.yaml && \
+        kubectl apply -f k8/chat-backend/deployment.yaml
+        kubectl apply -f k8/chat-backend/service.yaml

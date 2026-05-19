@@ -1,0 +1,743 @@
+.admin_ai {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.admin_ai_tab_content {
+    padding: 24px;
+    width: 100%;
+    height: calc(100% - 131px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/* Dashboard Cards */
+.admin_ai_content {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ai_card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ai_card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.ai_card_icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  background: #f3f4f6;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.ai_card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.ai_card p {
+  color: #64748b;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.primary-btn {
+  margin-top: auto;
+  background-color: #FF5200;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+  background-color: #e64a00;
+}
+
+/* Agents Tab */
+.admin_ai_agents_container {
+    animation: premiumFadeInDash 0.4s ease-out;
+}
+
+.admin_ai_agents_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.admin_ai_agents_header h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.admin_ai_agents_header p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+.admin_ai_empty_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.admin_ai_empty_state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    padding: 60px;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    animation: premiumFadeInDash 0.5s ease-out;
+}
+
+@keyframes premiumFadeInDash {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.admin_ai_empty_icon {
+    width: 90px;
+    height: 90px;
+    background: #fff9f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.admin_ai_empty_state h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 12px;
+}
+
+.admin_ai_empty_state p {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 32px;
+}
+
+/* ── Premium Agent List Cards ───────────────────────────────── */
+.ai_agents_list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ai_agent_card {
+    display: flex;
+    align-items: stretch;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.ai_agent_card:hover {
+    box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08), 0 4px 12px -4px rgba(0,0,0,0.04);
+    transform: translateY(-2px);
+    border-color: #cbd5e1;
+}
+
+.ai_agent_card_left {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(135deg, #fff9f6 0%, #fff 100%);
+    border-right: 1px solid #f1f5f9;
+    align-items: center;
+    width: 110px;
+    flex-shrink: 0;
+}
+
+.ai_agent_card_icon_wrap {
+    width: 48px;
+    height: 48px;
+    background: #FF5200;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 6px 14px -4px rgba(255, 82, 0, 0.3);
+}
+
+.ai_agent_status_badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+.ai_agent_status_badge.active {
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}
+.ai_agent_status_badge.inactive {
+    background: #f8fafc;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+.ai_agent_status_dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+.active .ai_agent_status_dot { background: #16a34a; box-shadow: 0 0 6px #16a34a; }
+.inactive .ai_agent_status_dot { background: #94a3b8; }
+
+.ai_agent_card_body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ai_agent_card_title_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.ai_agent_card_name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+}
+
+.ai_agent_card_id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 3px 6px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.ai_agent_card_tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.ai_tag {
+    background: #f8fafc;
+    color: #475569;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+.ai_tag_label {
+    font-weight: 500;
+    color: #94a3b8;
+}
+
+.ai_tag_value {
+    font-weight: 700;
+    color: #334155;
+}
+
+.ai_agent_prompt_label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.ai_agent_card_prompt {
+    font-size: 12px;
+    color: #1e293b;
+    background: #f8fafc;
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 8px;
+    border-left: 3px solid #FF5200;
+    font-style: italic;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.5;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.ai_agent_card_right {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    border-left: 1px solid #f1f5f9;
+    background: #f8fafc;
+    width: 170px;
+    flex-shrink: 0;
+}
+
+/* Custom Toggle Switch for Active/Inactive */
+.ai_agent_toggle_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    width: 100%;
+}
+
+.premium_toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+.premium_toggle_switch {
+    width: 40px;
+    height: 22px;
+    background: #cbd5e1;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+.premium_toggle_switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+.premium_toggle.active .premium_toggle_switch {
+    background: #10b981;
+}
+.premium_toggle.active .premium_toggle_switch::after {
+    transform: translateX(18px); /* 40 - 16 - 3 - 3 */
+}
+.premium_toggle_label {
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.premium_toggle_label.active_text {
+    color: #10b981;
+}
+.premium_toggle_label.inactive_text {
+    color: #64748b;
+}
+
+.card_action_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+.btn_card_action {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s;
+    border: none;
+}
+.btn_test_voice {
+    background: #FF5200;
+    color: white;
+    box-shadow: 0 4px 10px rgba(255, 82, 0, 0.2);
+}
+.btn_test_voice:hover {
+    background: #e64a00;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(255, 82, 0, 0.3);
+}
+.btn_edit_agent {
+    background: white;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+}
+.btn_edit_agent:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+}
+.btn_delete_agent {
+    background: transparent;
+    color: #ef4444;
+}
+.btn_delete_agent:hover {
+    background: #fef2f2;
+}
+
+/* ── Phone Number Grid ──────────────────────────────────────── */
+.phone_numbers_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.phone_number_card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: box-shadow 0.2s;
+}
+
+.phone_number_card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.phone_number_card_header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.phone_number_icon {
+    width: 40px;
+    height: 40px;
+    background: #fff9f6;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.phone_number_label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.phone_number_value {
+    font-size: 12px;
+    color: #64748b;
+    font-family: monospace;
+    margin-top: 2px;
+}
+
+/* ── Call Log Table ─────────────────────────────────────────── */
+.call_log_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.call_log_table th {
+    background: #f8fafc;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.call_log_table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+}
+
+.call_log_table tr:last-child td {
+    border-bottom: none;
+}
+
+.call_log_table tr:hover td {
+    background: #fafafa;
+}
+
+/* ── Billing Stats ──────────────────────────────────────────── */
+.billing_stats_row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.billing_stat_card {
+    flex: 1;
+    min-width: 160px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px 24px;
+    text-align: center;
+}
+
+.billing_stat_value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.billing_stat_label {
+    font-size: 12px;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.billing_stat_sub {
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+/* ── Call Logs Tab ─────────────────────────────────────────── */
+.admin_ai_call_logs_container {
+    animation: premiumFadeInDash 0.4s ease-out;
+}
+
+.ai_calls_table_wrapper {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+.ai_calls_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.ai_calls_table th {
+    background: #f8fafc;
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.ai_call_row {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.ai_call_row:hover {
+    background: #f8fafc;
+}
+
+.ai_call_row.expanded {
+    background: #fff9f6;
+    border-left: 3px solid #FF5200;
+}
+
+.ai_calls_table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+    vertical-align: top;
+}
+
+.source_badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.source_badge.fs {
+    background: #ecfdf5;
+    color: #059669;
+    border: 1px solid #a7f3d0;
+}
+.source_badge.tr {
+    background: #eff6ff;
+    color: #2563eb;
+    border: 1px solid #bfdbfe;
+}
+
+.summary_preview_cell {
+    color: #475569;
+    font-style: italic;
+    max-width: 300px;
+}
+
+.pending_text {
+    color: #d97706;
+    font-size: 12px;
+}
+
+/* Expanded Transcript Area */
+.ai_call_expanded_row td {
+    background: #fafafa;
+    padding: 0;
+    border-bottom: 2px solid #cbd5e1;
+}
+
+.expanded_call_content {
+    padding: 24px 40px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.transcript_loading, .transcript_error, .no_transcript {
+    text-align: center;
+    padding: 40px;
+    color: #64748b;
+    font-style: italic;
+}
+
+.transcript_container {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.transcript_header {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.transcript_header h4, .transcript_title {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #0f172a;
+    font-weight: 700;
+}
+.transcript_header p {
+    margin: 0;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+}
+
+.transcript_scroll_area {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 12px;
+}
+
+.msg_row {
+    display: flex;
+    width: 100%;
+}
+.row_user {
+    justify-content: flex-end;
+}
+.row_agent {
+    justify-content: flex-start;
+}
+
+.msg_bubble {
+    max-width: 75%;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+.msg_user {
+    background: #eff6ff;
+    color: #1e3a8a;
+    border-bottom-right-radius: 4px;
+    border: 1px solid #bfdbfe;
+}
+.msg_agent {
+    background: #f0fdf4;
+    color: #14532d;
+    border-bottom-left-radius: 4px;
+    border: 1px solid #bbf7d0;
+}
+.msg_interrupted {
+    background: #fff7ed;
+    color: #9a3412;
+    border: 1px solid #fed7aa;
+    font-style: italic;
+}

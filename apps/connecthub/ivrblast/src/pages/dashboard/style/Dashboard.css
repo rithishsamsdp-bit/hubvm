@@ -1,0 +1,88 @@
+.dashboard_container {
+    width: 100%;
+    display: flex;
+    height: calc(100vh - 60px);
+  }
+  
+  .dashboard_container_1 {
+    width: 200px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #1e1e29;
+    color: var(--white_font_color);
+    text-align: left;
+  }
+  
+  .dashboard_heading_container {
+    width: 100%;
+    padding: 8px 5px;
+    text-align: left;
+    background-color: var(--primary_color);
+    margin-bottom: 10px;
+  }
+  
+  .dashboard_heading {
+    font-size: var(--small_font_size);
+  }
+  
+  .dashboard_text_container {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer; /* Add cursor to indicate clickable area */
+  }
+  
+  .dashboard_text {
+    color: var(--white_font_color);
+    font-size: var(--very_very_small_font_size);
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    margin-left: 6px;
+  }
+  
+  /* Style applied to the active widget */
+  .textcontaineractive {
+    background-color: #3a3a44;
+    border-left: 2px solid var(--side_bar_active_icon_color);
+  }
+  
+  .widget-item {
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: grab;
+    margin-bottom: 5px;
+  }
+  
+  .dashboard_container_2 {
+    /* flex: 1; */
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #323649;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  .grid-item {
+    background: rgba(0, 149, 134, 0.25);
+    box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 4px;
+  }
+  
+  .grid-item-content {
+    padding: 10px;
+  }
+  

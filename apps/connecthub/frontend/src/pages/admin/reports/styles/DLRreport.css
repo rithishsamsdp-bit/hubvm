@@ -1,0 +1,102 @@
+.admin_dlr_report {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.admin_dlr_report_container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 31px 30px 190px 30px;
+}
+
+.admin_dlr_report_filter_container {
+    width: 100%;
+    height: 80px;
+    background-color: #ffffff;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0px 32px;
+    gap: 15px;
+}
+
+.admin_dlr_report_filter_clear_button {
+    background-color: transparent;
+    border: none;
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: var(--sengo-ui-font-family);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Status Tags */
+.dlr_status_tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.dlr_status_tag p {
+    margin: 0;
+}
+
+.dlr_status_sent {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.dlr_status_delivered {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.dlr_status_read {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.dlr_status_failed {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+/* Modal Styling */
+.admin_dlr_modal_header_container {
+    width: 100%;
+    height: 83px;
+    padding: 24px 32px;
+    background-color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.admin_dlr_modal_header {
+    margin: 0;
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-xxxl);
+    color: #111827;
+}
+
+.admin_dlr_modal_body {
+    padding: 32px;
+    max-height: 400px;
+    overflow-y: auto;
+    word-break: break-word;
+    color: #374151;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: var(--sengo-ui-font-family);
+}

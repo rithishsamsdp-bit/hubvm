@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-confrenceconsumer
+  namespace: connecthub
+  labels:
+    app: confrenceconsumer
+spec:
+  replicas: 1 # Number of pods to run
+  selector:
+    matchLabels:
+      app: confrenceconsumer
+  template:
+    metadata:
+      labels:
+        app: confrenceconsumer
+    spec:
+      containers:
+      - name: confrenceconsumer
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/confrenceconsumer:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+          - secretRef:
+              name: kafka-details
+          - secretRef:
+              name: mysql-details
+

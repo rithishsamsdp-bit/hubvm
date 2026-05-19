@@ -1,0 +1,114 @@
+.my-tooltip {
+    position: fixed;
+    z-index: 999999999999999999;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-family: var(--lato);
+    font-size: var(--font-sm);
+    line-height: 20px;
+    letter-spacing: 0;
+    font-weight: 400;
+    max-width: 240px;
+    background: var(--bg-slate-blue);
+    color: var(--color-white);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.14);
+    pointer-events: none;
+    opacity: 1;
+    animation: tooltip-fade-in 0.18s;
+}
+
+@keyframes tooltip-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* Arrow base */
+.my-tooltip-arrow {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: inherit;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+/* Arrow placements */
+.my-tooltip-arrow-top {
+    bottom: -7px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.my-tooltip-arrow-bottom {
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.my-tooltip-arrow-left {
+    right: -7px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.my-tooltip-arrow-right {
+    left: -7px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* Optional: Add for -start and -end if needed (top-start, bottom-end, etc.) */
+.my-tooltip-arrow-top-start {
+    bottom: -7px;
+    left: 18px;
+    transform: rotate(45deg);
+}
+
+.my-tooltip-arrow-top-end {
+    bottom: -7px;
+    right: 18px;
+    transform: rotate(45deg);
+}
+
+.my-tooltip-arrow-bottom-start {
+    top: -7px;
+    left: 18px;
+    transform: rotate(45deg);
+}
+
+.my-tooltip-arrow-bottom-end {
+    top: -7px;
+    right: 18px;
+    transform: rotate(45deg);
+}
+
+.my-tooltip-arrow-left-start {
+    right: -7px;
+    top: 18px;
+    transform: rotate(45deg);
+}
+
+.my-tooltip-arrow-left-end {
+    right: -7px;
+    bottom: 18px;
+    transform: rotate(45deg);
+}
+
+.my-tooltip-arrow-right-start {
+    left: -7px;
+    top: 18px;
+    transform: rotate(45deg);
+}
+
+.my-tooltip-arrow-right-end {
+    left: -7px;
+    bottom: 18px;
+    transform: rotate(45deg);
+}

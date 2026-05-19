@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-hepipe
+  namespace: connecthub
+  labels:
+    app: fastapi-hepipe
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-hepipe
+  template:
+    metadata:
+      labels:
+        app: fastapi-hepipe
+    spec:
+      containers:
+      - name: fastapi-hepipe-int-mid-fs1
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/hepipe:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: hepipe-details-midfs1
+
+      - name: fastapi-hepipe-int-mid-fs2
+        image: 647096474516.dkr.ecr.ap-south-1.amazonaws.com/connecthubtest/hepipe:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+        envFrom:
+        - secretRef:
+            name: hepipe-details-midfs2

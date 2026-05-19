@@ -1,0 +1,25 @@
+.FlowTopbar {
+    width: 100%;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-white);
+    padding: 0px 40px;
+    box-shadow: -1px -1px 12px 0px #0000001F;
+
+}
+
+.FlowTopbar_heading {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-xxxl);
+    line-height: 124%;
+    letter-spacing: 0.25px;
+    color: var(--color-midnight-blue);
+}
+
+.FlowTopbar_button_container {
+    display: flex;
+    gap: 20px;
+}

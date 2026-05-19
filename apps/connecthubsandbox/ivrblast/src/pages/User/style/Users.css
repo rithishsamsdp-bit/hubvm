@@ -1,0 +1,134 @@
+.users_container {
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+}
+
+.users_header {
+    width: 100%;
+    background-color: var(--navbar_background_color);
+    border-bottom: 0.5px solid var(--navbar_border_color);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 6px;
+}
+
+.users_heading {
+    font-size: var(--normal_font_size);
+    font-weight: 500;
+    color: var(--black_font_color);
+}
+
+
+.Users_header_input {
+    display: flex;
+    gap: 10px;
+}
+
+.users_search_input {
+    width: 250px;
+}
+
+.add_users_btn_icon {
+    font-size: var(--btn_font_size);
+}
+
+.add_users_form {
+    height: auto;
+    /* padding: 10px; */
+}
+
+.users_filter_section {
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+}
+
+.users_filters {
+    display: flex;
+    gap: 16px;
+}
+
+.Users_edit_icon {
+    color: var(--secondary_color);
+    font-size: var(--btn_font_size);
+    margin-right: 10px;
+}
+
+.users_deletes_icon {
+    color: var(--red_color);
+    font-size: var(--btn_font_size);
+}
+
+.users_tabel_view_container {
+    display: flex;
+    gap: 20px;
+
+}
+
+.users_tabel_first_container {
+    display: flex;
+
+}
+
+.users_tabel_user_icon {
+    font-size: 60px;
+    color: var(--navbar_user_icon_color);
+}
+
+.users_tabel_second_container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.users_username {
+    font-size: var(--small_font_size);
+    font-weight: 600;
+    color: var(--black_font_color);
+
+}
+
+.users_email {
+    font-size: var(--very_very_small_font_size);
+    color: var(--black_font_color);
+}
+
+.users_details_container {
+    display: flex;
+    font-size: var(--very_very_small_font_size);
+    gap: 70px;
+}
+
+.users_details_container_1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.users_details_container_2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.users_details {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.create_users_list_layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.create_users_list_layout_last {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}

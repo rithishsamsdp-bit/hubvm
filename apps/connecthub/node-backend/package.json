@@ -1,0 +1,14 @@
+{
+  "name": "node-backend",
+  "version": "1.0.0",
+  "description": "Node.js backend service for ConnectHub",
+  "main": "index.js",
+  "scripts": {
+    "start": "node cluster.js"
+  },
+  "dependencies": {
+    "fastify": "^5.7.4",
+    "ioredis": "^5.9.2",
+    "jsonwebtoken": "^9.0.3"
+  }
+}

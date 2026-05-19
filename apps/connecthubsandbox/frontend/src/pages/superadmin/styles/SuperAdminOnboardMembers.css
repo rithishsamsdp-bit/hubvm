@@ -1,0 +1,36 @@
+.superadmin_onboard_members_creation {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+.superadmin_onboard_members_content {
+    padding: 24px;
+    width: 100%;
+    height: calc(100% - 90px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.superadmin_onboard_members_container {
+    width: 100%;
+    height: 100%;
+}
+
+.superadmin_onboard_members_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.superadmin_onboard_members_title {
+    font-family: var(--segoe);
+    font-weight: 600;
+    font-size: var(--font-xxl);
+    color: var(--color-midnight-blue);
+}
+.superadmin_onboard_members_search {
+    display: flex;
+    align-items: center;
+}

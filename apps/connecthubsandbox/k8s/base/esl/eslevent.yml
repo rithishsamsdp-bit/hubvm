@@ -1,0 +1,133 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-eslevent
+  namespace: connecthub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fastapi-eslevent
+  template:
+    metadata:
+      labels:
+        app: fastapi-eslevent
+    spec:
+      containers:
+        - name: fastapi-eslevent-fs1
+          image: fastapi-eslevent-fs1
+          envFrom:
+            - secretRef:
+                name: esl-details-fs1
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+
+        - name: fastapi-eslevent-fs2
+          image: fastapi-eslevent-fs2
+          envFrom:
+            - secretRef:
+                name: esl-details-fs2
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+
+        - name: fastapi-eslevent-fs3
+          image: fastapi-eslevent-fs3
+          envFrom:
+            - secretRef:
+                name: esl-details-fs3
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+
+        - name: fastapi-eslevent-fs4
+          image: fastapi-eslevent-fs4
+          envFrom:
+            - secretRef:
+                name: esl-details-fs4
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+
+        - name: fastapi-eslevent-fs5
+          image: fastapi-eslevent-fs5
+          envFrom:
+            - secretRef:
+                name: esl-details-fs5
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+
+        - name: fastapi-eslevent-fs6
+          image: fastapi-eslevent-fs6
+          envFrom:
+            - secretRef:
+                name: esl-details-fs6
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+
+        - name: fastapi-eslevent-fs7
+          image: fastapi-eslevent-fs7
+          envFrom:
+            - secretRef:
+                name: esl-details-fs7
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+              
+        - name: fastapi-eslevent-fs8
+          image: fastapi-eslevent-fs8
+          envFrom:
+            - secretRef:
+                name: esl-details-fs8
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-eslevent
+  namespace: connecthub
+spec:
+  selector:
+    app: fastapi-eslevent
+  ports:
+    - name: producer  # Fixed typo
+      port: 3000
+      targetPort: 3000

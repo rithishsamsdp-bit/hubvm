@@ -1,0 +1,44 @@
+.admindash_HourlyChartcard {
+  padding: 20px;
+  background-color: var(--bg-white);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  color: var(--bg-midnight-blue);
+  min-width: 220px;
+  height: auto;
+}
+
+.admindash_line_chart {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: var(--font-xs);
+  color: var(--color-muted-slate);
+  height: 150px;
+  padding-right: 5px;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.line-chart {
+  height: auto;
+}
+
+.x-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-muted-slate);
+  padding: 0 5px;
+}

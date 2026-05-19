@@ -1,0 +1,289 @@
+  .admin_whatsapp_template_list_container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 131px;
+  }
+
+  .admin_whatsapp_template_list_container_table_search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-bottom: 16px;
+    gap: 30px;
+  }
+
+  .admin_whatsapp_template_list_container_action_conatiner {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .admin_whatsapp_template_list_container_modal_header_container {
+    width: 100%;
+    height: 83px;
+    padding: 24px 32px;
+    background-color: var(--bg-white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .admin_whatsapp_template_list_container_modal_header {
+    font-family: var(--segoe);
+    font-weight: 700;
+    font-size: var(--font-xxxl);
+  }
+
+  .admin_whatsapp_template_list_container_modal_form {
+    width: 100%;
+    height: 100%;
+    padding: 32px;
+  }
+
+  .admin_whatsapp_template_list_container_modal_form_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 25px;
+  }
+
+  .admin_whatsapp_template_list_container_modal_form_group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .admin_whatsapp_template_list_container_modal_footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .admin_whatsapp_template_list_action_conatiner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  @media (min-width: 600px) {
+
+
+    .admin_whatsapp_template_list_container_modal_form_group.admin_whatsapp_template_list_container_modal_form_group_address {
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* Template Status Badges */
+  .status_approved {
+    color: #15803d;
+    background-color: #dcfce7;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .status_pending {
+    color: #c2410c;
+    background-color: #ffedd5;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .status_rejected {
+    color: #b91c1c;
+    background-color: #fee2e2;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  /* Eye Icon Preview Button */
+  .template_preview_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+  }
+
+  .template_preview_btn:hover {
+    background-color: #e0e7ff;
+  }
+
+  /* Delete Button */
+  .template_delete_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+  }
+
+  .template_delete_btn:hover {
+    background-color: #fee2e2;
+  }
+
+  .template_delete_btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  /* Template Preview Modal Header - using Modal component */
+  .template_preview_modal_header_container {
+    width: 100%;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e2e8f0;
+    background: #ffffff;
+  }
+
+  .template_preview_modal_header {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+
+  .template_preview_close_btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+  }
+
+  .template_preview_close_btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  .template_preview_close_btn svg {
+    color: #ffffff !important;
+  }
+
+  /* Modal Content */
+  .template_preview_modal_content {
+    padding: 20px;
+    overflow-y: auto;
+    max-height: calc(80vh - 70px);
+  }
+
+  /* Template Info Section */
+  .template_preview_info {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+
+  .template_preview_info_row {
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+  }
+
+  .template_preview_info_row:not(:last-child) {
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .template_preview_label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    width: 90px;
+  }
+
+  .template_preview_value {
+    font-size: 14px;
+    color: #1e293b;
+    font-weight: 500;
+  }
+
+  /* WhatsApp-style Message Card */
+  .template_preview_message_card {
+    background: #dcf8c6;
+    border-radius: 8px;
+    padding: 12px 14px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .template_preview_message_card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #dcf8c6 transparent transparent transparent;
+  }
+
+  /* Body Text */
+  .template_preview_body {
+    font-size: 14px;
+    color: #1e293b;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Footer Text */
+  .template_preview_footer {
+    font-size: 12px;
+    color: #64748b;
+    font-style: italic;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  /* Buttons Section */
+  .template_preview_buttons {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .template_preview_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #6366f1;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .template_preview_button:hover {
+    background: #f1f5f9;
+    border-color: #6366f1;
+  }
